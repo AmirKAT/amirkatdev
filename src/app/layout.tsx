@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import { Instrument_Sans, Instrument_Serif } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { IBM_Plex_Mono, Instrument_Sans, Instrument_Serif } from "next/font/google";
 import { Footer } from "@/components/footer";
 import { Navigation } from "@/components/navigation";
 import { site } from "@/lib/site";
@@ -9,6 +9,7 @@ const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
   variable: "--font-instrument-sans",
   display: "swap",
+  adjustFontFallback: true,
 });
 
 const instrumentSerif = Instrument_Serif({
@@ -16,6 +17,16 @@ const instrumentSerif = Instrument_Serif({
   weight: "400",
   variable: "--font-instrument-serif",
   display: "swap",
+  adjustFontFallback: true,
+});
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-ibm-plex-mono",
+  display: "swap",
+  preload: false,
+  adjustFontFallback: true,
 });
 
 const title = `${site.name} — Digital studio`;
@@ -42,6 +53,17 @@ export const metadata: Metadata = {
     title,
     description: site.description,
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#090807",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -49,7 +71,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${instrumentSans.variable} ${instrumentSerif.variable} h-full antialiased`}
+      className={`${instrumentSans.variable} ${instrumentSerif.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-ink font-sans text-cream">
         <a

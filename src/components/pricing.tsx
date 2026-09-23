@@ -1,0 +1,120 @@
+import { Button } from "@/components/button";
+import { Heading } from "@/components/heading";
+import { Section } from "@/components/section";
+import { cn } from "@/lib/cn";
+import { startProject } from "@/lib/site";
+
+const plans = [
+  {
+    number: "01",
+    title: "Website",
+    price: "€1,000",
+    description: "Professional websites for businesses, services and personal brands.",
+    includes: [
+      "Custom responsive design",
+      "Multi-page website",
+      "Mobile optimisation",
+      "Contact forms",
+      "Basic SEO",
+      "Deployment",
+    ],
+    highlighted: false,
+  },
+  {
+    number: "02",
+    title: "Custom website",
+    price: "€2,000",
+    description:
+      "More bespoke websites with custom functionality, integrations and richer experiences.",
+    includes: [
+      "Custom UI/UX",
+      "Advanced interactions",
+      "Integrations",
+      "Forms",
+      "Analytics",
+      "SEO",
+      "Deployment",
+    ],
+    highlighted: true,
+  },
+  {
+    number: "03",
+    title: "Web app / product",
+    price: "€4,000",
+    description: "Custom web applications and digital products with real functionality.",
+    includes: [
+      "Custom application architecture",
+      "Authentication where required",
+      "Database integration",
+      "APIs",
+      "Responsive UI",
+      "Testing",
+      "Deployment",
+    ],
+    highlighted: false,
+  },
+] as const;
+
+export function Pricing({
+  titleLevel = 2,
+  estimateHref = startProject.href,
+}: {
+  titleLevel?: 1 | 2;
+  estimateHref?: string;
+}) {
+  const itemLevel = titleLevel === 1 ? 2 : 3;
+
+  return (
+    <Section
+      id="pricing"
+      index="04"
+      eyebrow="Pricing"
+      title="What does it cost?"
+      intro="Most projects fall somewhere within these ranges. Once I understand the scope, I'll give you a clear quote."
+      titleLevel={titleLevel}
+      className="border-t border-line"
+    >
+      <div className="grid items-stretch gap-5 lg:grid-cols-3 lg:gap-6 xl:gap-8">
+        {plans.map((plan) => (
+          <article
+            key={plan.number}
+            className={cn(
+              "flex h-full flex-col border px-6 py-8 motion-safe:transition-colors motion-safe:duration-base lg:px-6 lg:py-8 xl:px-8 xl:py-10",
+              plan.highlighted
+                ? "border-burgundy bg-ink-raised"
+                : "border-line hover:border-cream/25",
+            )}
+          >
+            <p className="text-eyebrow text-stone uppercase">From</p>
+            <p className="mt-3 font-display text-[clamp(2.5rem,4vw,3.5rem)] leading-none tracking-[-0.03em] text-cream">
+              {plan.price}
+            </p>
+            <Heading level={itemLevel} size="title" className="mt-6">
+              {plan.title}
+            </Heading>
+            <p className="mt-3 text-body text-cream-muted">{plan.description}</p>
+            <p className="mt-8 text-eyebrow text-stone uppercase">Includes</p>
+            <ul className="mt-4 flex flex-col gap-3">
+              {plan.includes.map((item) => (
+                <li key={item} className="flex gap-3 text-small text-cream-muted">
+                  <span className="mt-[0.6rem] h-px w-3 shrink-0 bg-burgundy" aria-hidden="true" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+
+      <p className="mt-12 max-w-2xl text-small text-stone">
+        Final pricing depends on scope, complexity and integrations. These are starting points, not
+        fixed packages.
+      </p>
+      <div className="mt-8">
+        <Button href={estimateHref} size="lg" className="w-full sm:w-auto">
+          Get a project estimate
+        </Button>
+      </div>
+    </Section>
+  );
+}

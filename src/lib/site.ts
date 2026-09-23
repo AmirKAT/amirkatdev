@@ -4,7 +4,7 @@ export const site = {
   url: "https://amirkat.dev",
   tagline: "Build · Ship · Improve",
   description:
-    "I build custom websites, web applications and digital products for businesses, brands and individuals.",
+    "I build custom websites, web apps and digital products for businesses, brands and ambitious ideas.",
   audiences: ["Businesses", "Brands", "Individuals"],
 } as const;
 
@@ -12,9 +12,15 @@ export const navigation = [
   { label: "Work", href: "/work" },
   { label: "Services", href: "/services" },
   { label: "Pricing", href: "/pricing" },
+  { label: "About", href: "/about" },
 ] as const;
 
 export const startProject = {
   label: "Start a project",
-  href: "/start",
+  href: "/contact",
+} as const;
+
+export const profiles = {
+  github: { label: "GitHub", href: "https://github.com/AmirKAT" },
+  email: { label: "Email", href: "mailto:hello@amirkat.dev" },
 } as const;

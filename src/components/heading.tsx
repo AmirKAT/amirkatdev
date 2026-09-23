@@ -9,6 +9,8 @@ type HeadingProps = {
   size?: HeadingSize;
   className?: string;
   id?: string;
+  tabIndex?: number;
+  ref?: React.Ref<HTMLHeadingElement>;
 };
 
 const tags = {
@@ -38,13 +40,17 @@ export function Heading({
   size,
   className,
   id,
+  tabIndex,
+  ref,
 }: HeadingProps) {
   const Tag = tags[level];
   const resolvedSize = size ?? defaultSize[level];
 
   return (
     <Tag
+      ref={ref}
       id={id}
+      tabIndex={tabIndex}
       className={cn("text-balance text-cream", sizeClass[resolvedSize], className)}
     >
       {children}

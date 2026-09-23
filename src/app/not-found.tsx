@@ -5,6 +5,8 @@ import { Section } from "@/components/section";
 
 export const metadata: Metadata = {
   title: "Page not available",
+  description: "This page is not available. It may have moved, or it has not been published yet.",
+  robots: { index: false, follow: false },
 };
 
 export default function NotFound() {

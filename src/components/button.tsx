@@ -12,6 +12,7 @@ type ButtonProps = {
   className?: string;
   type?: "button" | "submit" | "reset";
   onClick?: () => void;
+  disabled?: boolean;
 };
 
 const variants: Record<ButtonVariant, string> = {
@@ -32,7 +33,7 @@ function buttonClassName(
   className?: string,
 ) {
   return cn(
-    "inline-flex items-center justify-center rounded-sm font-sans font-medium tracking-wide transition-colors duration-fast ease-out-soft",
+    "inline-flex items-center justify-center rounded-sm font-sans font-medium tracking-wide transition-colors duration-fast ease-out-soft disabled:pointer-events-none disabled:opacity-60",
     variants[variant],
     sizes[size],
     className,
@@ -47,6 +48,7 @@ export function Button({
   className,
   type = "button",
   onClick,
+  disabled = false,
 }: ButtonProps) {
   const classes = buttonClassName(variant, size, className);
 
@@ -63,6 +65,7 @@ export function Button({
           onClick={onClick}
         >
           {children}
+          <span className="sr-only">, opens in a new tab</span>
         </a>
       );
     }
@@ -75,7 +78,7 @@ export function Button({
   }
 
   return (
-    <button type={type} className={classes} onClick={onClick}>
+    <button type={type} className={classes} onClick={onClick} disabled={disabled}>
       {children}
     </button>
   );

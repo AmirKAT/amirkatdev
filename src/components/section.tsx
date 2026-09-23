@@ -5,9 +5,11 @@ import { cn } from "@/lib/cn";
 type SectionProps = {
   children?: React.ReactNode;
   id?: string;
+  index?: string;
   eyebrow?: string;
   title?: string;
   intro?: string;
+  titleLevel?: 1 | 2;
   className?: string;
   containerClassName?: string;
   padding?: "default" | "none";
@@ -15,16 +17,18 @@ type SectionProps = {
 };
 
 const paddingClass = {
-  default: "py-section-sm md:py-section",
+  default: "py-14 md:py-section-sm lg:py-section",
   none: "",
 } as const;
 
 export function Section({
   children,
   id,
+  index,
   eyebrow,
   title,
   intro,
+  titleLevel = 2,
   className,
   containerClassName,
   padding = "default",
@@ -44,15 +48,20 @@ export function Section({
     >
       <Container className={containerClassName}>
         {hasHeader ? (
-          <header className="mb-12 max-w-3xl md:mb-16">
+          <header className="mb-10 max-w-3xl md:mb-16">
             {eyebrow ? (
-              <p className="mb-5 flex items-center gap-3 text-eyebrow text-stone uppercase">
-                <span className="h-px w-10 bg-burgundy" aria-hidden="true" />
-                {eyebrow}
+              <p className="mb-5 flex items-center gap-3 text-stone">
+                {index ? (
+                  <span className="font-mono text-[0.6875rem] tracking-[0.08em] text-cream-muted">
+                    {index}
+                  </span>
+                ) : null}
+                <span className="h-px w-8 bg-burgundy" aria-hidden="true" />
+                <span className="text-eyebrow uppercase">{eyebrow}</span>
               </p>
             ) : null}
             {title ? (
-              <Heading level={2} size="headline">
+              <Heading level={titleLevel} size="headline">
                 {title}
               </Heading>
             ) : null}

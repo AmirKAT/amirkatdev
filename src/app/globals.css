@@ -16,6 +16,7 @@
 @theme inline {
   --font-sans: var(--font-instrument-sans), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
+  --font-mono: var(--font-ibm-plex-mono), ui-monospace, monospace;
 }
 
 @theme {
@@ -79,6 +80,8 @@
   --duration-base: 280ms;
   --duration-slow: 480ms;
 
+  --animate-step: step-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+
   --breakpoint-sm: 40rem;
   --breakpoint-md: 48rem;
   --breakpoint-lg: 64rem;
@@ -88,9 +91,21 @@
 
 :root {
   --page-width: 76rem;
-  --header-height: 4.25rem;
+  --header-height: 4.75rem;
   color-scheme: dark;
   background: var(--color-ink);
+}
+
+@media (min-width: 40rem) {
+  :root {
+    --header-height: 5.75rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  :root {
+    --header-height: 7.25rem;
+  }
 }
 
 html {
@@ -114,6 +129,32 @@ body {
 :focus-visible {
   outline: 2px solid var(--color-cream);
   outline-offset: 3px;
+}
+
+@keyframes step-in {
+  from {
+    opacity: 0;
+    translate: 0 0.45rem;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+.quiet-link {
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.4em;
+  transition:
+    color var(--duration-fast) var(--ease-out-soft),
+    text-decoration-color var(--duration-fast) var(--ease-out-soft);
+}
+
+.quiet-link:hover {
+  color: var(--color-cream);
+  text-decoration-color: var(--color-burgundy);
 }
 
 @media (prefers-reduced-motion: reduce) {
