@@ -4,20 +4,13 @@ import { Button } from "@/components/button";
 import { Container } from "@/components/container";
 import { Heading } from "@/components/heading";
 import { Tag } from "@/components/tag";
-import { cn } from "@/lib/cn";
-import type { CaseStudy, CaseStudyImage } from "@/lib/case-studies";
+import type { CaseStudy } from "@/lib/case-studies";
 import type { Project } from "@/lib/projects";
 
 type CaseStudyPageProps = {
   project: Project;
   study: CaseStudy;
   next: Project;
-};
-
-const galleryFrame: Record<CaseStudyImage["layout"], string> = {
-  wide: "aspect-[16/10]",
-  offset: "aspect-[16/9]",
-  portrait: "aspect-[3/4] max-w-md",
 };
 
 export function CaseStudyPage({ project, study, next }: CaseStudyPageProps) {
@@ -97,30 +90,18 @@ export function CaseStudyPage({ project, study, next }: CaseStudyPageProps) {
       <Container className="flex flex-col gap-12 border-t border-line py-section-sm md:gap-16 md:py-section">
         <h2 className="text-eyebrow text-stone uppercase">The product</h2>
         {study.gallery.map((image) => (
-          <figure
-            key={image.src}
-            className={cn(image.layout === "offset" && "md:ml-[10%] md:w-[90%]")}
-          >
-            <div
-              className={cn(
-                "relative overflow-hidden bg-ink-soft",
-                galleryFrame[image.layout],
-                image.layout === "portrait" && "mx-auto",
-              )}
-            >
+          <figure key={image.src}>
+            <div className="relative aspect-[16/10] overflow-hidden bg-ink-soft">
               <Image
                 src={image.src}
                 alt={image.alt}
                 fill
-                sizes={
+                sizes="(min-width: 64rem) 72rem, 100vw"
+                className={
                   image.layout === "portrait"
-                    ? "(min-width: 48rem) 28rem, 100vw"
-                    : "(min-width: 64rem) 72rem, 100vw"
+                    ? "object-cover object-center"
+                    : "object-cover object-top"
                 }
-                className={cn(
-                  "object-cover",
-                  image.layout === "portrait" ? "object-center" : "object-top",
-                )}
               />
             </div>
             <figcaption className="mt-4 text-eyebrow text-stone uppercase">
