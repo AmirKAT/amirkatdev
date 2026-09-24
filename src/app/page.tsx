@@ -2,11 +2,10 @@ import { About } from "@/components/about";
 import { Hero } from "@/components/hero";
 import { HowItWorks } from "@/components/how-it-works";
 import { JsonLd } from "@/components/json-ld";
-import { Pricing } from "@/components/pricing";
+import { LocalPricing, LocalStartProject } from "@/components/local-pricing";
 import { Section } from "@/components/section";
 import { SelectedWork } from "@/components/selected-work";
 import { Services } from "@/components/services";
-import { StartProjectForm } from "@/components/start-project";
 import { Technology } from "@/components/technology";
 import { pageMetadata, pages, studioJsonLd } from "@/lib/seo";
 
@@ -24,7 +23,7 @@ export default function Home() {
 
       <HowItWorks />
 
-      <Pricing estimateHref="/#start" />
+      <LocalPricing estimateHref="/#start" />
 
       <About showCta={false} />
 
@@ -37,7 +36,7 @@ export default function Home() {
         intro="Tell me what you're trying to build. Even if it's just an idea, that's enough to start."
         className="border-t border-line"
       >
-        <StartProjectForm />
+        <LocalStartProject />
       </Section>
     </>
   );

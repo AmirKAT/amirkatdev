@@ -1,6 +1,6 @@
 import { JsonLd } from "@/components/json-ld";
 import { Section } from "@/components/section";
-import { StartProjectForm } from "@/components/start-project";
+import { LocalStartProject } from "@/components/local-pricing";
 import { pageJsonLd, pageMetadata, pages } from "@/lib/seo";
 
 export const metadata = pageMetadata(pages.contact);
@@ -17,7 +17,7 @@ export default function ContactPage() {
         titleLevel={1}
         className="border-t border-line"
       >
-        <StartProjectForm questionLevel={2} />
+        <LocalStartProject questionLevel={2} />
       </Section>
     </>
   );

@@ -1,3 +1,5 @@
+import { allBudgetOptions } from "@/lib/currency";
+
 export const projectTypes = [
   "Business website",
   "Web app / SaaS",
@@ -6,13 +8,7 @@ export const projectTypes = [
   "Something else",
 ] as const;
 
-export const budgets = [
-  "Under €1,000",
-  "€1,000–€2,500",
-  "€2,500–€5,000",
-  "€5,000–€10,000",
-  "€10,000+",
-] as const;
+export const budgets = allBudgetOptions();
 
 export const timelines = ["ASAP", "2–4 weeks", "1–2 months", "2–3 months", "Flexible"] as const;
 

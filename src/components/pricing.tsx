@@ -8,7 +8,7 @@ const plans = [
   {
     number: "01",
     title: "Website",
-    price: "€1,000",
+    price: 0,
     description: "Professional websites for businesses, services and personal brands.",
     includes: [
       "Custom responsive design",
@@ -23,7 +23,7 @@ const plans = [
   {
     number: "02",
     title: "Custom website",
-    price: "€2,000",
+    price: 1,
     description:
       "More bespoke websites with custom functionality, integrations and richer experiences.",
     includes: [
@@ -40,7 +40,7 @@ const plans = [
   {
     number: "03",
     title: "Web app / product",
-    price: "€4,000",
+    price: 2,
     description: "Custom web applications and digital products with real functionality.",
     includes: [
       "Custom application architecture",
@@ -58,9 +58,11 @@ const plans = [
 export function Pricing({
   titleLevel = 2,
   estimateHref = startProject.href,
+  prices,
 }: {
   titleLevel?: 1 | 2;
   estimateHref?: string;
+  prices: readonly string[];
 }) {
   const itemLevel = titleLevel === 1 ? 2 : 3;
 
@@ -93,7 +95,7 @@ export function Pricing({
             ) : null}
             <p className="text-eyebrow text-stone uppercase">From</p>
             <p className="mt-3 font-display text-[clamp(2.5rem,4vw,3.5rem)] leading-none tracking-[-0.03em] text-cream">
-              {plan.price}
+              {prices[plan.price]}
             </p>
             <Heading level={itemLevel} size="title" className="mt-6">
               {plan.title}

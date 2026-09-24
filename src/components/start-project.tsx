@@ -5,7 +5,7 @@ import { submitEnquiry } from "@/app/actions/enquiry";
 import { Button } from "@/components/button";
 import { Heading } from "@/components/heading";
 import { cn } from "@/lib/cn";
-import { budgets, parseEnquiry, projectTypes, timelines, type EnquiryResult } from "@/lib/enquiry";
+import { parseEnquiry, projectTypes, timelines, type EnquiryResult } from "@/lib/enquiry";
 
 const steps = [
   {
@@ -16,7 +16,6 @@ const steps = [
   {
     key: "budget",
     prompt: "What's your approximate budget?",
-    options: budgets,
   },
   {
     key: "timeline",
@@ -50,7 +49,13 @@ const emptyAnswers: Answers = {
 const fieldClassName =
   "mt-2 min-h-12 w-full rounded-sm border border-line bg-transparent px-4 py-3 text-base text-cream outline-none transition-colors duration-fast placeholder:text-stone focus:border-cream/40";
 
-export function StartProjectForm({ questionLevel = 3 }: { questionLevel?: 2 | 3 }) {
+export function StartProjectForm({
+  questionLevel = 3,
+  budgets,
+}: {
+  questionLevel?: 2 | 3;
+  budgets: readonly string[];
+}) {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Answers>(emptyAnswers);
   const [notice, setNotice] = useState("");
@@ -200,7 +205,7 @@ export function StartProjectForm({ questionLevel = 3 }: { questionLevel?: 2 | 3 
             headingRef={headingRef}
             questionLevel={questionLevel}
             prompt={choice.prompt}
-            options={choice.options}
+            options={choice.key === "budget" ? budgets : choice.options}
             selected={answers[choice.key]}
             onChoose={(value) => choose(choice.key, value)}
           />
