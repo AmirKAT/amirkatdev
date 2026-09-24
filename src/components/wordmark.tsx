@@ -11,9 +11,9 @@ export function Wordmark({ className, priority = false }: WordmarkProps) {
     <Image
       src="/brand/logo.png"
       alt=""
-      width={1295}
-      height={1214}
-      sizes="96px"
+      width={1478}
+      height={1064}
+      sizes="112px"
       priority={priority}
       className={cn("h-16 w-auto sm:h-20", className)}
     />

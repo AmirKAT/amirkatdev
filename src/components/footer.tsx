@@ -18,9 +18,9 @@ export function Footer() {
               <Image
                 src="/brand/logo.png"
                 alt=""
-                width={1295}
-                height={1214}
-                sizes="120px"
+                width={1478}
+                height={1064}
+                sizes="160px"
                 className="h-24 w-auto sm:h-28"
               />
             </Link>
