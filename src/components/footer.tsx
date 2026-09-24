@@ -3,8 +3,7 @@ import Link from "next/link";
 import { Container } from "@/components/container";
 import { navigation, profiles, site, startProject } from "@/lib/site";
 
-const pageLinks = [...navigation, startProject];
-const externalLinks = [profiles.email];
+const footerLinks = [...navigation, startProject, profiles.email];
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -30,36 +29,33 @@ export function Footer() {
             </p>
           </div>
 
-          <div className="flex gap-12 sm:gap-20">
-            <nav aria-label="Footer" className="flex flex-col">
-              {pageLinks.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="quiet-link flex min-h-11 items-center text-sm text-stone"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-            <nav aria-label="Contact" className="flex flex-col">
-              {externalLinks.map((item) => {
+          <nav aria-label="Footer" className="flex flex-col items-start">
+            {footerLinks.map((item) => {
+              const className = "quiet-link flex min-h-11 items-center text-sm text-stone";
+
+              if (item.href.startsWith("http") || item.href.startsWith("mailto:")) {
                 const external = item.href.startsWith("http");
 
                 return (
                   <a
                     key={item.href}
                     href={item.href}
-                    className="quiet-link flex min-h-11 items-center text-sm text-stone"
+                    className={className}
                     {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
                   >
                     {item.label}
                     {external ? <span className="sr-only">, opens in a new tab</span> : null}
                   </a>
                 );
-              })}
-            </nav>
-          </div>
+              }
+
+              return (
+                <Link key={item.href} href={item.href} className={className}>
+                  {item.label}
+                </Link>
+              );
+            })}
+          </nav>
         </div>
 
         <p className="mt-14 text-small text-stone">
