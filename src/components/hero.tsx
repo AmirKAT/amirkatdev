@@ -7,16 +7,23 @@ export function Hero() {
   return (
     <section id="hero" aria-labelledby="hero-heading" className="relative overflow-hidden">
       <Container className="py-16 md:py-24 lg:py-28">
-        <p className="flex items-center gap-3 text-stone">
-          <span className="h-px w-8 bg-burgundy" aria-hidden="true" />
+        <p className="flex items-center gap-3 text-stone motion-safe:animate-step">
+          <span className="draw-rule h-px w-8 bg-burgundy" aria-hidden="true" />
           <span className="text-eyebrow uppercase">{site.tagline}</span>
         </p>
-        <Heading id="hero-heading" level={1} size="display" className="mt-6 max-w-4xl">
+        <Heading
+          id="hero-heading"
+          level={1}
+          size="display"
+          className="mt-6 max-w-4xl motion-safe:animate-step [animation-delay:90ms]"
+        >
           Websites and digital products,{" "}
           <span className="italic text-cream-muted">built properly.</span>
         </Heading>
-        <p className="mt-6 max-w-xl text-body text-cream-muted">{site.description}</p>
-        <div className="mt-10 flex flex-col gap-3 min-[400px]:flex-row min-[400px]:flex-wrap">
+        <p className="mt-6 max-w-xl text-body text-cream-muted motion-safe:animate-step [animation-delay:180ms]">
+          {site.description}
+        </p>
+        <div className="mt-10 flex flex-col gap-3 motion-safe:animate-step min-[400px]:flex-row min-[400px]:flex-wrap [animation-delay:260ms]">
           <Button href="/#start" size="lg" className="w-full min-[400px]:w-auto">
             Start a project
           </Button>

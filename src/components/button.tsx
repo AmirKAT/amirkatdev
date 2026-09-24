@@ -33,7 +33,7 @@ function buttonClassName(
   className?: string,
 ) {
   return cn(
-    "inline-flex items-center justify-center rounded-sm font-sans font-medium tracking-wide transition-colors duration-fast ease-out-soft disabled:pointer-events-none disabled:opacity-60",
+    "inline-flex items-center justify-center rounded-sm font-sans font-medium tracking-wide transition-[color,background-color,border-color,transform] duration-fast ease-out-soft motion-safe:hover:-translate-y-px disabled:pointer-events-none disabled:opacity-60",
     variants[variant],
     sizes[size],
     className,

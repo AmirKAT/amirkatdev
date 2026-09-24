@@ -171,6 +171,68 @@ body::before {
   text-decoration-color: var(--color-burgundy);
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  body {
+    animation: atmosphere 32s var(--ease-out-soft) infinite alternate;
+  }
+}
+
+@keyframes atmosphere {
+  from {
+    background-position: 0 0, 0 0, 0 0;
+  }
+
+  to {
+    background-position: -1.5rem 0.75rem, 1rem -0.5rem, 0 0;
+  }
+}
+
+@keyframes draw-rule {
+  from {
+    scale: 0 1;
+  }
+
+  to {
+    scale: 1 1;
+  }
+}
+
+.draw-rule {
+  transform-origin: left center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .draw-rule {
+    animation: draw-rule 0.7s var(--ease-out-soft) 0.08s both;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .rise {
+      animation-name: step-in;
+      animation-duration: auto;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 24%;
+    }
+  }
+}
+
+.surface {
+  transition:
+    transform var(--duration-base) var(--ease-out-soft),
+    border-color var(--duration-base) var(--ease-out-soft),
+    box-shadow var(--duration-base) var(--ease-out-soft);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .surface:hover {
+    transform: translateY(-3px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

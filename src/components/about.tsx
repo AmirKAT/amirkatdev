@@ -18,7 +18,7 @@ export function About({
         <span className="text-eyebrow uppercase">About</span>
       </p>
 
-      <Heading id="about-heading" level={titleLevel} size="headline" className="max-w-4xl">
+      <Heading id="about-heading" level={titleLevel} size="headline" className="rise max-w-4xl">
         Built by an engineer.
         <br />
         Designed for humans.

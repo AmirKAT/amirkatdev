@@ -48,7 +48,7 @@ export function Section({
     >
       <Container className={containerClassName}>
         {hasHeader ? (
-          <header className="mb-10 max-w-3xl md:mb-16">
+          <header className="rise mb-10 max-w-3xl md:mb-16">
             {eyebrow ? (
               <p className="mb-5 flex items-center gap-3 text-stone">
                 {index ? (

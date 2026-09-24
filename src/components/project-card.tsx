@@ -128,7 +128,7 @@ export function ProjectCard({
 
   if (project.caseStudyHref) {
     return (
-      <article className={cn("group", className)}>
+      <article className={cn("group rise", className)}>
         <Link href={project.caseStudyHref} className="block rounded-sm">
           {media}
         </Link>
@@ -155,7 +155,7 @@ export function ProjectCard({
   }
 
   return (
-    <article className={cn("group", className)}>
+    <article className={cn("group rise", className)}>
       <a href={project.url} className="block rounded-sm" rel="noreferrer" target="_blank">
         {media}
         <div className={copyClass}>

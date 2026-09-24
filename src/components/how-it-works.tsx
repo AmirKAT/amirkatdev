@@ -41,7 +41,7 @@ export function HowItWorks() {
           return (
             <li
               key={stage.number}
-              className="relative pl-8 last:pb-0 md:pb-0 md:pl-0 xl:pr-12 xl:last:pr-0"
+              className="rise relative pl-8 last:pb-0 md:pb-0 md:pl-0 xl:pr-12 xl:last:pr-0"
             >
               {connected ? (
                 <span

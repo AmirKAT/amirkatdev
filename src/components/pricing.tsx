@@ -79,7 +79,7 @@ export function Pricing({
           <article
             key={plan.number}
             className={cn(
-              "relative flex h-full flex-col overflow-hidden border px-6 py-8 shadow-lift motion-safe:transition-colors motion-safe:duration-base lg:px-6 lg:py-8 xl:px-8 xl:py-10",
+              "surface rise relative flex h-full flex-col overflow-hidden border px-6 py-8 shadow-lift lg:px-6 lg:py-8 xl:px-8 xl:py-10",
               plan.highlighted
                 ? "border-burgundy bg-ink-raised"
                 : "border-line bg-ink-soft/50 hover:border-cream/25",

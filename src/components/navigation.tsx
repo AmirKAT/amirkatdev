@@ -81,7 +81,7 @@ export function Navigation() {
   }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line/80 bg-ink/75 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-line/80 bg-ink/75 shadow-[0_18px_40px_-28px_rgb(0_0_0/0.85)] backdrop-blur-md">
       <Container className="flex items-center justify-between gap-4 py-2.5 sm:gap-6 sm:py-3 lg:py-4">
         <Link href="/" aria-label="AmirKAT home" onClick={close} className="shrink-0">
           <Wordmark />
