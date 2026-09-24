@@ -12,10 +12,10 @@ type EnquiryInput = {
   website?: string;
 };
 
+const enquiryRecipients = ["amir-katal@hotmail.com", "amirkatal96@gmail.com"] as const;
+
 function resendConfigured() {
-  return Boolean(
-    process.env.RESEND_API_KEY && process.env.RESEND_FROM_EMAIL && process.env.ENQUIRY_TO_EMAIL,
-  );
+  return Boolean(process.env.RESEND_API_KEY && process.env.RESEND_FROM_EMAIL);
 }
 
 function supabaseConfigured() {
@@ -43,7 +43,7 @@ async function sendWithResend(enquiry: Enquiry) {
     },
     body: JSON.stringify({
       from: process.env.RESEND_FROM_EMAIL,
-      to: [process.env.ENQUIRY_TO_EMAIL],
+      to: [...enquiryRecipients],
       reply_to: enquiry.email,
       subject: `Project enquiry from ${enquiry.name}`,
       text: enquiryText(enquiry),
