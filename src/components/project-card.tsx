@@ -19,7 +19,7 @@ type ProjectCardProps = {
 const frameClass: Record<ProjectCardVariant, string> = {
   feature: "aspect-[16/10]",
   portrait: "aspect-[16/10] lg:aspect-[2/1]",
-  frame: "aspect-[4/3] lg:aspect-[3/2]",
+  frame: "aspect-[16/10]",
 };
 
 const focalClass: Record<Project["image"]["focal"], string> = {

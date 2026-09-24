@@ -9,7 +9,6 @@ export function SelectedWork({
   titleLevel?: 1 | 2;
   showHeading?: boolean;
 }) {
-  const [featured, ...rest] = projects;
   const cardLevel = showHeading && titleLevel === 1 ? 2 : 3;
 
   return (
@@ -29,30 +28,17 @@ export function SelectedWork({
           Selected work
         </h2>
       )}
-      <div className="flex flex-col gap-14 md:gap-20 lg:gap-28">
-        {featured ? (
+      <div className="grid items-start gap-12 md:grid-cols-2 md:gap-x-8 md:gap-y-14 lg:grid-cols-3">
+        {projects.map((project, position) => (
           <ProjectCard
-            project={featured}
-            variant="feature"
-            index="01"
+            key={project.slug}
+            project={project}
             headingLevel={cardLevel}
-            priority
+            variant="frame"
+            index={String(position + 1).padStart(2, "0")}
+            priority={position === 0}
           />
-        ) : null}
-        <div className="grid items-start gap-14 lg:grid-cols-12 lg:gap-x-10">
-          {rest.map((project, position) => (
-            <ProjectCard
-              key={project.slug}
-              project={project}
-              headingLevel={cardLevel}
-              variant={position === 0 ? "portrait" : "frame"}
-              index={String(position + 2).padStart(2, "0")}
-              className={
-                position === 0 ? "lg:col-span-5" : "lg:col-span-6 lg:col-start-7 lg:mt-36"
-              }
-            />
-          ))}
-        </div>
+        ))}
       </div>
     </Section>
   );
