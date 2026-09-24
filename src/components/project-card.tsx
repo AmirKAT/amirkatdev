@@ -49,7 +49,7 @@ export function ProjectCard({
   const media = (
     <div
       className={cn(
-        "relative overflow-hidden bg-ink-soft shadow-[inset_0_0_0_1px_var(--color-line)] motion-safe:transition-shadow motion-safe:duration-base motion-safe:ease-out-soft motion-safe:group-hover:shadow-[inset_0_0_0_1px_rgb(249_239_226/0.22)]",
+        "relative overflow-hidden bg-ink-soft shadow-lift ring-1 ring-cream/10 motion-safe:transition-shadow motion-safe:duration-base motion-safe:ease-out-soft motion-safe:group-hover:ring-cream/25",
         frameClass[variant],
       )}
     >

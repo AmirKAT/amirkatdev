@@ -79,12 +79,18 @@ export function Pricing({
           <article
             key={plan.number}
             className={cn(
-              "flex h-full flex-col border px-6 py-8 motion-safe:transition-colors motion-safe:duration-base lg:px-6 lg:py-8 xl:px-8 xl:py-10",
+              "relative flex h-full flex-col overflow-hidden border px-6 py-8 shadow-lift motion-safe:transition-colors motion-safe:duration-base lg:px-6 lg:py-8 xl:px-8 xl:py-10",
               plan.highlighted
                 ? "border-burgundy bg-ink-raised"
-                : "border-line hover:border-cream/25",
+                : "border-line bg-ink-soft/50 hover:border-cream/25",
             )}
           >
+            {plan.highlighted ? (
+              <span
+                aria-hidden="true"
+                className="absolute inset-x-0 top-0 h-px bg-burgundy"
+              />
+            ) : null}
             <p className="text-eyebrow text-stone uppercase">From</p>
             <p className="mt-3 font-display text-[clamp(2.5rem,4vw,3.5rem)] leading-none tracking-[-0.03em] text-cream">
               {plan.price}

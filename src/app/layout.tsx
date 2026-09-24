@@ -73,7 +73,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       data-scroll-behavior="smooth"
       className={`${instrumentSans.variable} ${instrumentSerif.variable} ${plexMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-ink font-sans text-cream">
+      <body className="relative flex min-h-full flex-col bg-ink font-sans text-cream">
         <a
           href="#content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-6 focus:z-50 focus:bg-cream focus:px-4 focus:py-2 focus:text-sm focus:text-ink"

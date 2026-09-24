@@ -46,16 +46,16 @@ export function HowItWorks() {
               {connected ? (
                 <span
                   aria-hidden="true"
-                  className="absolute top-3 -bottom-12 left-[3px] w-px bg-line md:hidden"
+                  className="absolute top-10 -bottom-12 left-5 w-px -translate-x-1/2 bg-line md:hidden"
                 />
               ) : null}
               {connected ? (
                 <span
                   aria-hidden="true"
-                  className="absolute top-[0.45rem] right-0 left-10 hidden h-px bg-line xl:block"
+                  className="absolute top-5 right-0 left-10 hidden h-px bg-line xl:block"
                 />
               ) : null}
-              <p className="relative z-10 w-fit font-mono text-[0.6875rem] tracking-[0.08em] text-stone xl:bg-ink xl:pr-4">
+              <p className="relative z-10 flex size-10 items-center justify-center border border-line bg-ink-raised font-mono text-[0.6875rem] tracking-[0.08em] text-cream-muted">
                 {stage.number}
               </p>
               <Heading level={3} size="title" className="mt-6">

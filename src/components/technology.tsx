@@ -19,9 +19,15 @@ const testing = ["Jest", "React Testing Library", "Playwright", "Cypress"] as co
 
 function Names({ items, muted = false }: { items: readonly string[]; muted?: boolean }) {
   return (
-    <ul className="flex flex-wrap gap-x-6 gap-y-3">
+    <ul className="flex flex-wrap gap-2">
       {items.map((name) => (
-        <li key={name} className={cn("text-small", muted ? "text-cream-muted" : "text-cream")}>
+        <li
+          key={name}
+          className={cn(
+            "border border-line bg-ink-raised px-3 py-1.5 text-small",
+            muted ? "text-cream-muted" : "text-cream",
+          )}
+        >
           {name}
         </li>
       ))}
