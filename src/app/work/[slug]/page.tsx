@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { CaseStudyPage } from "@/components/case-study-page";
+import { PageTransition } from "@/components/page-transition";
 import { JsonLd } from "@/components/json-ld";
 import { getCaseStudy } from "@/lib/case-studies";
 import { getNextProject, getProject, projects } from "@/lib/projects";
@@ -31,9 +32,9 @@ export default async function Page(props: PageProps<"/work/[slug]">) {
   }
 
   return (
-    <>
+    <PageTransition>
       <JsonLd data={projectJsonLd(project)} />
       <CaseStudyPage project={project} study={study} next={next} />
-    </>
+    </PageTransition>
   );
 }

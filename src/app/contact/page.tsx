@@ -1,4 +1,5 @@
 import { JsonLd } from "@/components/json-ld";
+import { PageTransition } from "@/components/page-transition";
 import { Section } from "@/components/section";
 import { LocalStartProject } from "@/components/local-pricing";
 import { pageJsonLd, pageMetadata, pages } from "@/lib/seo";
@@ -7,7 +8,7 @@ export const metadata = pageMetadata(pages.contact);
 
 export default function ContactPage() {
   return (
-    <>
+    <PageTransition>
       <JsonLd data={pageJsonLd(pages.contact)} />
       <Section
         id="start"
@@ -19,6 +20,6 @@ export default function ContactPage() {
       >
         <LocalStartProject questionLevel={2} />
       </Section>
-    </>
+    </PageTransition>
   );
 }

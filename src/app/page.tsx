@@ -1,4 +1,5 @@
 import { About } from "@/components/about";
+import { PageTransition } from "@/components/page-transition";
 import { Hero } from "@/components/hero";
 import { HowItWorks } from "@/components/how-it-works";
 import { JsonLd } from "@/components/json-ld";
@@ -13,7 +14,7 @@ export const metadata = pageMetadata(pages.home);
 
 export default function Home() {
   return (
-    <>
+    <PageTransition>
       <JsonLd data={studioJsonLd()} />
       <Hero />
 
@@ -38,6 +39,6 @@ export default function Home() {
       >
         <LocalStartProject />
       </Section>
-    </>
+    </PageTransition>
   );
 }

@@ -81,7 +81,10 @@ export function Navigation() {
   }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line/80 bg-ink/75 pt-[env(safe-area-inset-top,0px)] shadow-[0_18px_40px_-28px_rgb(0_0_0/0.85)] backdrop-blur-md">
+    <header
+      style={{ viewTransitionName: "site-header" }}
+      className="sticky top-0 z-40 border-b border-line/80 bg-ink/92 pt-[env(safe-area-inset-top,0px)] shadow-[0_18px_40px_-28px_rgb(0_0_0/0.85)] lg:bg-ink/80 lg:backdrop-blur-md"
+    >
       <Container className="flex items-center justify-between gap-4 py-2.5 sm:gap-6 sm:py-3 lg:py-4">
         <Link href="/" aria-label="AmirKAT home" onClick={close} className="shrink-0">
           <Wordmark />

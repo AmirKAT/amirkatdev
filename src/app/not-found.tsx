@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Button } from "@/components/button";
+import { PageTransition } from "@/components/page-transition";
 import { Heading } from "@/components/heading";
 import { Section } from "@/components/section";
 
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
+    <PageTransition>
     <Section labelledBy="missing-heading">
       <Heading id="missing-heading" level={1} size="headline">
         This page is not available.
@@ -22,5 +24,6 @@ export default function NotFound() {
         <Button href="/">Back to the studio</Button>
       </div>
     </Section>
+    </PageTransition>
   );
 }

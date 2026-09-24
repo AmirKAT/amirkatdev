@@ -9,7 +9,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-line">
+    <footer className="border-t border-line" style={{ viewTransitionName: "site-footer" }}>
       <Container className="py-14 md:py-20">
         <div className="grid gap-12 md:grid-cols-[minmax(0,1fr)_auto] md:items-start md:gap-20">
           <div className="max-w-md">
