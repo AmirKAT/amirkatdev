@@ -12,9 +12,9 @@ const services = [
   },
   {
     number: "02",
-    title: "Web applications",
+    title: "Web app / SaaS",
     description:
-      "Custom web apps, dashboards, portals and interactive experiences built around the way your business actually works.",
+      "Custom web apps, dashboards and portals, including customer-facing products with accounts, payments and the infrastructure to run them.",
     example: { href: "/work/wizume", label: "See Wizume" },
   },
   {
@@ -23,12 +23,6 @@ const services = [
     description:
       "Turn an idea into a real product — from concept and design through development and launch.",
     example: { href: "/work/tactiqclub", label: "See TactiqClub" },
-  },
-  {
-    number: "04",
-    title: "SaaS",
-    description:
-      "Customer-facing software with accounts, payments, data, integrations and the infrastructure needed to run it.",
   },
 ] as const;
 

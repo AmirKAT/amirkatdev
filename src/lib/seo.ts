@@ -27,7 +27,7 @@ export const pages = {
     path: "/services",
     title: "Services",
     description:
-      "Custom websites, web applications, digital products and SaaS, from a straightforward site to a fully custom product.",
+      "Custom websites, web apps, SaaS and digital products, from a straightforward site to a fully custom product.",
   },
   pricing: {
     path: "/pricing",
@@ -109,7 +109,7 @@ export function studioJsonLd() {
     description: pages.home.description,
     email: "hello@amirkat.dev",
     sameAs: ["https://github.com/AmirKAT"],
-    knowsAbout: ["Websites", "Web applications", "Digital products", "SaaS"],
+    knowsAbout: ["Websites", "Web app / SaaS", "Digital products"],
     makesOffer: [
       {
         "@type": "Offer",
