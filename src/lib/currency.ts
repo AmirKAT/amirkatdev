@@ -52,12 +52,6 @@ const europeanCountries = new Set([
 const eurStarting = [1000, 2000, 4000] as const;
 const eurBands = [1000, 2500, 5000, 10000] as const;
 
-const rate: Record<Currency, number> = {
-  EUR: 1,
-  GBP: 0.85,
-  USD: 1.15,
-};
-
 export function currencyForCountry(country: string | null | undefined): Currency {
   const code = country?.trim().toUpperCase() ?? "";
 
@@ -76,27 +70,14 @@ export function currencyForCountry(country: string | null | undefined): Currency
   return "EUR";
 }
 
-function roundPrice(amount: number) {
-  const step = amount >= 2500 ? 100 : 50;
-  return Math.round(amount / step) * step;
-}
-
-function convert(euros: number, currency: Currency) {
-  if (currency === "EUR") {
-    return euros;
-  }
-
-  return roundPrice(euros * rate[currency]);
-}
-
-export function formatMoney(euros: number, currency: Currency) {
+export function formatMoney(amount: number, currency: Currency) {
   const locale = currency === "USD" ? "en-US" : currency === "GBP" ? "en-GB" : "en-IE";
 
   return new Intl.NumberFormat(locale, {
     style: "currency",
     currency,
     maximumFractionDigits: 0,
-  }).format(convert(euros, currency));
+  }).format(amount);
 }
 
 export function startingPrices(currency: Currency) {
