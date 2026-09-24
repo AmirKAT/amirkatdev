@@ -183,8 +183,10 @@ export function StartProjectForm({ questionLevel = 3 }: { questionLevel?: 2 | 3 
             <li key={index} className="flex-1">
               <span
                 className={cn(
-                  "block h-px motion-safe:transition-colors motion-safe:duration-base",
-                  index <= step ? "bg-burgundy" : "bg-line",
+                  "block origin-left motion-safe:transition-[height,background-color] motion-safe:duration-base motion-safe:ease-out-soft",
+                  index < step && "h-px bg-burgundy",
+                  index === step && "h-0.5 bg-burgundy",
+                  index > step && "h-px bg-line",
                 )}
               />
             </li>
@@ -350,8 +352,9 @@ function ChoiceStep({
       >
         {prompt}
       </Heading>
-      <div className="mt-8 border-t border-line" role="group" aria-labelledby={promptId}>
-        {options.map((option) => {
+      <p className="mt-4 text-small text-stone">Choose one. The next question follows.</p>
+      <div className="mt-6 border-t border-line" role="group" aria-labelledby={promptId}>
+        {options.map((option, index) => {
           const active = selected === option;
 
           return (
@@ -361,15 +364,29 @@ function ChoiceStep({
               aria-pressed={active}
               onClick={() => onChoose(option)}
               className={cn(
-                "flex min-h-14 w-full items-center justify-between gap-6 border-b border-line py-4 text-left text-body transition-colors duration-fast",
-                active ? "text-cream" : "text-cream-muted hover:text-cream",
+                "group relative flex min-h-14 w-full items-center justify-between gap-6 overflow-hidden border-b border-line px-1 py-4 text-left text-body motion-safe:transition-[color,background-color,padding] motion-safe:duration-base motion-safe:ease-out-soft",
+                active
+                  ? "bg-ink-raised pr-4 pl-5 text-cream"
+                  : "text-cream-muted hover:bg-ink-raised hover:pr-4 hover:pl-5 hover:text-cream",
               )}
             >
-              {option}
+              <span
+                aria-hidden="true"
+                className={cn(
+                  "absolute inset-y-0 left-0 w-0.5 origin-center bg-burgundy motion-safe:transition-transform motion-safe:duration-base motion-safe:ease-out-soft",
+                  active ? "scale-y-100" : "scale-y-0 group-hover:scale-y-100",
+                )}
+              />
+              <span className="flex min-w-0 items-center gap-4">
+                <span className="font-mono text-[0.6875rem] tracking-[0.08em] text-stone">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span>{option}</span>
+              </span>
               <span
                 className={cn(
-                  "h-px shrink-0 bg-burgundy motion-safe:transition-[width] motion-safe:duration-base",
-                  active ? "w-8" : "w-0",
+                  "h-px shrink-0 bg-burgundy motion-safe:transition-[width] motion-safe:duration-base motion-safe:ease-out-soft",
+                  active ? "w-10" : "w-0 group-hover:w-8",
                 )}
                 aria-hidden="true"
               />
