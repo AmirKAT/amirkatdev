@@ -28,7 +28,7 @@ export function SelectedWork({
           Selected work
         </h2>
       )}
-      <div className="grid items-start gap-12 md:grid-cols-2 md:gap-x-8 md:gap-y-14 lg:grid-cols-3">
+      <div className="grid gap-12 md:grid-cols-2 md:gap-x-8 md:gap-y-14 lg:grid-cols-3">
         {projects.map((project, position) => (
           <ProjectCard
             key={project.slug}

@@ -100,7 +100,7 @@ export function ProjectCard({
     ) : null;
 
   const viewProject = (
-    <span className="mt-5 inline-flex min-h-11 items-center gap-3 text-eyebrow text-cream uppercase">
+    <span className="inline-flex min-h-11 items-center gap-3 text-eyebrow text-cream uppercase">
       View project
       <span className="sr-only">, opens in a new tab</span>
       <span
@@ -123,12 +123,12 @@ export function ProjectCard({
 
   const copyClass =
     variant === "feature"
-      ? "mt-8 grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(16rem,0.72fr)] lg:items-end lg:gap-12"
-      : "mt-6";
+      ? "mt-8 grid flex-1 gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(16rem,0.72fr)] lg:items-end lg:gap-12"
+      : "mt-6 flex flex-1 flex-col";
 
   if (project.caseStudyHref) {
     return (
-      <article className={cn("group rise", className)}>
+      <article className={cn("group rise flex flex-col", className)}>
         <Link href={project.caseStudyHref} className="block rounded-sm">
           {media}
         </Link>
@@ -137,12 +137,12 @@ export function ProjectCard({
             {meta}
             {title}
           </Link>
-          <div>
+          <div className="flex flex-1 flex-col">
             {summary}
             {technologies}
             <a
               href={project.url}
-              className="inline-flex rounded-sm"
+              className="mt-auto inline-flex rounded-sm pt-5"
               rel="noreferrer"
               target="_blank"
             >
@@ -155,18 +155,18 @@ export function ProjectCard({
   }
 
   return (
-    <article className={cn("group rise", className)}>
-      <a href={project.url} className="block rounded-sm" rel="noreferrer" target="_blank">
+    <article className={cn("group rise flex flex-col", className)}>
+      <a href={project.url} className="flex flex-1 flex-col rounded-sm" rel="noreferrer" target="_blank">
         {media}
         <div className={copyClass}>
           <div>
             {meta}
             {title}
           </div>
-          <div>
+          <div className="flex flex-1 flex-col">
             {summary}
             {technologies}
-            {viewProject}
+            <span className="mt-auto pt-5">{viewProject}</span>
           </div>
         </div>
       </a>
