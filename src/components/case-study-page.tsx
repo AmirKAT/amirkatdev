@@ -97,11 +97,7 @@ export function CaseStudyPage({ project, study, next }: CaseStudyPageProps) {
                 alt={image.alt}
                 fill
                 sizes="(min-width: 64rem) 72rem, 100vw"
-                className={
-                  image.layout === "portrait"
-                    ? "object-cover object-center"
-                    : "object-cover object-top"
-                }
+                className="object-cover object-top"
               />
             </div>
             <figcaption className="mt-4 text-eyebrow text-stone uppercase">
