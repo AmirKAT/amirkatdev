@@ -4,7 +4,7 @@ import { Container } from "@/components/container";
 import { navigation, profiles, site, startProject } from "@/lib/site";
 
 const pageLinks = [...navigation, startProject];
-const externalLinks = [profiles.github, profiles.email];
+const externalLinks = [profiles.email];
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -14,26 +14,16 @@ export function Footer() {
       <Container className="py-14 md:py-20">
         <div className="grid gap-12 md:grid-cols-[minmax(0,1fr)_auto] md:items-start md:gap-20">
           <div className="max-w-md">
-            <div className="flex items-end gap-4">
+            <Link href="/" aria-label="AmirKAT home" className="inline-flex">
               <Image
-                src="/brand/mascot.png"
+                src="/brand/logo.png"
                 alt=""
-                width={830}
-                height={660}
-                sizes="56px"
-                className="h-14 w-auto"
+                width={1295}
+                height={1214}
+                sizes="120px"
+                className="h-24 w-auto sm:h-28"
               />
-              <Link href="/" aria-label="AmirKAT home" className="mb-1 inline-flex min-h-11 items-center">
-                <Image
-                  src="/brand/wordmark.png"
-                  alt=""
-                  width={954}
-                  height={139}
-                  sizes="220px"
-                  className="h-7 w-auto sm:h-8"
-                />
-              </Link>
-            </div>
+            </Link>
             <p className="mt-6 text-eyebrow text-stone uppercase">{site.tagline}</p>
             <p className="mt-4 text-body text-cream-muted">
               Websites and digital products, built properly.

@@ -105,7 +105,7 @@ export function studioJsonLd() {
     "@type": "ProfessionalService",
     name: site.name,
     url: site.url,
-    image: `${site.url}/brand/lockup.png`,
+    image: `${site.url}/brand/logo.png`,
     description: pages.home.description,
     email: "hello@amirkat.dev",
     sameAs: ["https://github.com/AmirKAT"],

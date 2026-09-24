@@ -21,6 +21,5 @@ export const startProject = {
 } as const;
 
 export const profiles = {
-  github: { label: "GitHub", href: "https://github.com/AmirKAT" },
   email: { label: "Email", href: "mailto:hello@amirkat.dev" },
 } as const;

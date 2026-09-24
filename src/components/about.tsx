@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Button } from "@/components/button";
 import { Heading } from "@/components/heading";
 import { Section } from "@/components/section";
@@ -25,8 +24,8 @@ export function About({
         Designed for humans.
       </Heading>
 
-      <div className="mt-10 grid items-end gap-12 lg:mt-14 lg:grid-cols-[minmax(0,42rem)_1fr] lg:gap-16">
-        <div className="max-w-2xl space-y-5 text-body text-cream-muted">
+      <div className="mt-10 max-w-2xl lg:mt-14">
+        <div className="space-y-5 text-body text-cream-muted">
           <p>
             I&apos;m Amir, a software engineer who enjoys turning ideas into things people can
             actually use.
@@ -43,17 +42,6 @@ export function About({
             <span className="h-px w-8 shrink-0 bg-burgundy" aria-hidden="true" />
             Building professionally. Shipping independently.
           </p>
-        </div>
-
-        <div className="w-fit lg:justify-self-end">
-          <Image
-            src="/brand/mascot.png"
-            alt=""
-            width={830}
-            height={660}
-            sizes="12rem"
-            className="h-36 w-auto sm:h-44"
-          />
         </div>
       </div>
 

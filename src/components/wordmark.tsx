@@ -9,13 +9,13 @@ type WordmarkProps = {
 export function Wordmark({ className, priority = false }: WordmarkProps) {
   return (
     <Image
-      src="/brand/lockup.png"
+      src="/brand/logo.png"
       alt=""
-      width={891}
-      height={818}
-      sizes="80px"
+      width={1295}
+      height={1214}
+      sizes="96px"
       priority={priority}
-      className={cn("h-14 w-auto sm:h-16 lg:h-20", className)}
+      className={cn("h-16 w-auto sm:h-20", className)}
     />
   );
 }

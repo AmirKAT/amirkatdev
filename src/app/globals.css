@@ -91,20 +91,20 @@
 
 :root {
   --page-width: 76rem;
-  --header-height: 4.75rem;
+  --header-height: 5.25rem;
   color-scheme: dark;
   background: var(--color-ink);
 }
 
 @media (min-width: 40rem) {
   :root {
-    --header-height: 5.75rem;
+    --header-height: 6.5rem;
   }
 }
 
 @media (min-width: 64rem) {
   :root {
-    --header-height: 7.25rem;
+    --header-height: 7rem;
   }
 }
 
