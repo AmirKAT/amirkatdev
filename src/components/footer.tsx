@@ -19,8 +19,8 @@ export function Footer() {
                 alt=""
                 width={1478}
                 height={1064}
-                sizes="160px"
-                className="h-24 w-auto sm:h-28"
+                sizes="240px"
+                className="h-36 w-auto sm:h-[10.5rem]"
               />
             </Link>
             <p className="mt-6 text-eyebrow text-stone uppercase">{site.tagline}</p>

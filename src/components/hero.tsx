@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 export function Hero() {
   return (
     <section id="hero" aria-labelledby="hero-heading" className="relative overflow-hidden">
-      <Container className="py-16 md:py-24 lg:py-28">
+      <Container className="py-12 sm:py-16 md:py-24 lg:py-28">
         <p className="flex items-center gap-3 text-stone motion-safe:animate-step">
           <span className="draw-rule h-px w-8 bg-burgundy" aria-hidden="true" />
           <span className="text-eyebrow uppercase">{site.tagline}</span>

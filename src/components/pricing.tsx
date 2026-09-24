@@ -76,12 +76,12 @@ export function Pricing({
       titleLevel={titleLevel}
       className="border-t border-line"
     >
-      <div className="grid items-stretch gap-5 lg:grid-cols-3 lg:gap-6 xl:gap-8">
+      <div className="grid items-stretch gap-5 md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-6 xl:gap-8">
         {plans.map((plan) => (
           <article
             key={plan.number}
             className={cn(
-              "surface rise relative flex h-full flex-col overflow-hidden border px-6 py-8 shadow-lift lg:px-6 lg:py-8 xl:px-8 xl:py-10",
+              "surface rise relative flex h-full flex-col overflow-hidden border px-6 py-8 shadow-lift md:last:col-span-2 lg:px-6 lg:py-8 lg:last:col-span-1 xl:px-8 xl:py-10",
               plan.highlighted
                 ? "border-burgundy bg-ink-raised"
                 : "border-line bg-ink-soft/50 hover:border-cream/25",

@@ -91,25 +91,40 @@
 
 :root {
   --page-width: 76rem;
-  --header-height: 5.25rem;
+  --header-height: calc(5.25rem + env(safe-area-inset-top, 0px));
   color-scheme: dark;
   background: var(--color-ink);
 }
 
 @media (min-width: 40rem) {
   :root {
-    --header-height: 6.5rem;
+    --header-height: calc(6.5rem + env(safe-area-inset-top, 0px));
   }
 }
 
 @media (min-width: 64rem) {
   :root {
-    --header-height: 7rem;
+    --header-height: calc(7rem + env(safe-area-inset-top, 0px));
   }
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+.site-container {
+  padding-inline: max(var(--spacing-gutter), env(safe-area-inset-left, 0px))
+    max(var(--spacing-gutter), env(safe-area-inset-right, 0px));
+}
+
+@media (min-width: 48rem) {
+  .site-container {
+    padding-inline: max(var(--spacing-gutter-lg), env(safe-area-inset-left, 0px))
+      max(var(--spacing-gutter-lg), env(safe-area-inset-right, 0px));
+  }
 }
 
 body {
@@ -122,6 +137,9 @@ body {
   font-size: 1.0625rem;
   line-height: 1.7;
   text-rendering: optimizeLegibility;
+  overflow-x: clip;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  -webkit-tap-highlight-color: transparent;
 }
 
 body::before {
@@ -227,7 +245,7 @@ body::before {
     box-shadow var(--duration-base) var(--ease-out-soft);
 }
 
-@media (prefers-reduced-motion: no-preference) {
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
   .surface:hover {
     transform: translateY(-3px);
   }

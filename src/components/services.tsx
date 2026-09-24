@@ -43,7 +43,7 @@ export function Services({ titleLevel = 2 }: { titleLevel?: 1 | 2 }) {
         {services.map((service) => (
           <li
             key={service.number}
-            className="surface rise flex h-full flex-col border border-line bg-ink-raised px-6 py-8 shadow-lift hover:border-cream/25 md:px-7 md:py-10"
+            className="surface rise flex h-full flex-col border border-line bg-ink-raised px-6 py-8 shadow-lift hover:border-cream/25 md:px-7 md:py-10 md:last:col-span-2 lg:last:col-span-1"
           >
             <p className="font-mono text-[0.6875rem] tracking-[0.08em] text-stone">
               {service.number}
