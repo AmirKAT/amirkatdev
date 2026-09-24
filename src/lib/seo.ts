@@ -21,7 +21,7 @@ export const pages = {
     path: "/work",
     title: "Selected work",
     description:
-      "Websites, products and digital experiences from AmirKAT, including Wizume, StepWithSerg and TactiqClub.",
+      "Websites, products and digital experiences from AmirKAT, including Wizume, StepWithSerg, TactiqClub and Katalyst Media.",
   },
   services: {
     path: "/services",

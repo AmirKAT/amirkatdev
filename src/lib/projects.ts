@@ -57,6 +57,20 @@ export const projects: readonly Project[] = [
     },
     caseStudyHref: "/work/tactiqclub",
   },
+  {
+    slug: "katalyst-media",
+    title: "Katalyst Media",
+    category: "Business website",
+    summary:
+      "A website for a music marketing studio, built to show how a release is taken from the song to the audience.",
+    url: "https://www.katalystmedia.co.uk",
+    image: {
+      src: "/work/katalyst.jpg",
+      alt: "Katalyst Media homepage, with the headline about putting music in front of the right people.",
+      focal: "top",
+    },
+    caseStudyHref: "/work/katalyst-media",
+  },
 ];
 
 export function getProject(slug: string) {

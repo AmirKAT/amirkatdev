@@ -155,6 +155,48 @@ export const caseStudies: Record<string, CaseStudy> = {
       },
     ],
   },
+  "katalyst-media": {
+    overview:
+      "Katalyst Media is a music marketing studio in London. The site is for artists, producers, managers and labels, and it shows how a release is put in front of the people most likely to connect with it.",
+    challenge:
+      "A campaign is difficult to explain as a list of services. The visitor needs to see the order of the work: the music, the audience, the plan, the launch, and what gets adjusted afterwards. The site had to make that sequence clear without turning the studio into a software product.",
+    built:
+      "A single-page website. It opens on the studio and the artists it has worked with, then walks through the five stages of a campaign, and closes with a way to enquire.",
+    features: [
+      {
+        title: "The artists, on the first screen",
+        body: "The homepage names artists the studio has worked with, including AJ Tracey, Gigi Moss, Mellina Tey and Kian Cyrs, with the platform beside each name.",
+      },
+      {
+        title: "Five stages, in order",
+        body: "The process runs from the music, to the audience, to the strategy, to launch, and then to optimisation. Each stage stays on screen long enough to read.",
+      },
+      {
+        title: "The campaign, shown as it runs",
+        body: "Strategy, launch and results are drawn as working views: creators and content, a command centre for reach and spend, and a comparison of the original plan with the adjusted one. The figures on the page are illustrative.",
+      },
+      {
+        title: "A direct enquiry",
+        body: "The page ends with an invitation to talk about the next release, covering creator campaigns, paid media, content and DSP pitching.",
+      },
+    ],
+    technologies: ["Next.js", "React"],
+    technologyNote: "Hosted on Vercel.",
+    gallery: [
+      {
+        src: "/work/katalyst-process.jpg",
+        alt: "Katalyst Media process step for understanding the music, with tempo, mood and genre.",
+        caption: "The music, before the plan",
+        layout: "wide",
+      },
+      {
+        src: "/work/katalyst-campaign.jpg",
+        alt: "Katalyst Media campaign view with reach, engagement and spend.",
+        caption: "The launch, kept in one view",
+        layout: "offset",
+      },
+    ],
+  },
 };
 
 export function getCaseStudy(slug: string) {
