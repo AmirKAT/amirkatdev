@@ -13,9 +13,9 @@ export function Wordmark({ className, priority = false }: WordmarkProps) {
       alt=""
       width={1295}
       height={1295}
-      sizes="112px"
+      sizes="(min-width: 64rem) 64px, (min-width: 40rem) 56px, 48px"
       priority={priority}
-      className={cn("h-16 w-auto sm:h-20", className)}
+      className={cn("h-12 w-auto sm:h-14 lg:h-16", className)}
     />
   );
 }

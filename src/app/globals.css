@@ -91,20 +91,20 @@
 
 :root {
   --page-width: 76rem;
-  --header-height: calc(5.25rem + env(safe-area-inset-top, 0px));
+  --header-height: calc(4.25rem + env(safe-area-inset-top, 0px));
   color-scheme: dark;
   background: var(--color-ink);
 }
 
 @media (min-width: 40rem) {
   :root {
-    --header-height: calc(6.5rem + env(safe-area-inset-top, 0px));
+    --header-height: calc(5rem + env(safe-area-inset-top, 0px));
   }
 }
 
 @media (min-width: 64rem) {
   :root {
-    --header-height: calc(7rem + env(safe-area-inset-top, 0px));
+    --header-height: calc(6rem + env(safe-area-inset-top, 0px));
   }
 }
 
