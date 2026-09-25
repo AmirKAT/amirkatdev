@@ -185,7 +185,7 @@ export function StartProjectForm({
       >
         <p className="font-mono text-[0.6875rem] tracking-[0.08em] text-stone">
           {String(step + 1).padStart(2, "0")}
-          <span className="mx-2 text-line">/</span>
+          <span className="mx-2">/</span>
           05
         </p>
         <ol className="mt-4 flex gap-2">
