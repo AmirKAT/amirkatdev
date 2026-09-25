@@ -1,6 +1,6 @@
 "use server";
 
-import { parseEnquiry, type Enquiry, type EnquiryResult } from "@/lib/enquiry";
+import { enquiryRecipients, parseEnquiry, type Enquiry, type EnquiryResult } from "@/lib/enquiry";
 
 type EnquiryInput = {
   projectType?: string;
@@ -11,8 +11,6 @@ type EnquiryInput = {
   email?: string;
   website?: string;
 };
-
-const enquiryRecipients = ["amir-katal@hotmail.com", "amirkatal96@gmail.com"] as const;
 
 function resendConfigured() {
   return Boolean(process.env.RESEND_API_KEY && process.env.RESEND_FROM_EMAIL);

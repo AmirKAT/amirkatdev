@@ -25,10 +25,27 @@ export type Enquiry = {
   email: string;
 };
 
+export const enquiryRecipients = ["amir-katal@hotmail.com", "amirkatal96@gmail.com"] as const;
+
 export type EnquiryResult =
   | { status: "sent" }
   | { status: "unavailable" }
   | { status: "invalid"; message: string };
+
+export function enquiryMailto(enquiry: Enquiry) {
+  const subject = `Project enquiry from ${enquiry.name}`;
+  const body = [
+    `Name: ${enquiry.name}`,
+    `Email: ${enquiry.email}`,
+    `Looking to build: ${enquiry.projectType}`,
+    `Budget: ${enquiry.budget}`,
+    `Timeline: ${enquiry.timeline}`,
+    "",
+    enquiry.message,
+  ].join("\n");
+
+  return `mailto:${enquiryRecipients.join(",")}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 

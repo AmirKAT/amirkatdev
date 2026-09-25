@@ -5,7 +5,13 @@ import { submitEnquiry } from "@/app/actions/enquiry";
 import { Button } from "@/components/button";
 import { Heading } from "@/components/heading";
 import { cn } from "@/lib/cn";
-import { parseEnquiry, projectTypes, timelines, type EnquiryResult } from "@/lib/enquiry";
+import {
+  enquiryMailto,
+  parseEnquiry,
+  projectTypes,
+  timelines,
+  type EnquiryResult,
+} from "@/lib/enquiry";
 
 const steps = [
   {
@@ -60,6 +66,7 @@ export function StartProjectForm({
   const [answers, setAnswers] = useState<Answers>(emptyAnswers);
   const [notice, setNotice] = useState("");
   const [result, setResult] = useState<EnquiryResult | null>(null);
+  const [mailDraft, setMailDraft] = useState(false);
   const [pending, startTransition] = useTransition();
   const headingRef = useRef<HTMLHeadingElement>(null);
   const advanceTimer = useRef<number | null>(null);
@@ -136,6 +143,13 @@ export function StartProjectForm({
         return;
       }
 
+      if (response.status === "unavailable") {
+        setMailDraft(true);
+        window.location.href = enquiryMailto(parsed.enquiry);
+        setResult({ status: "sent" });
+        return;
+      }
+
       setResult(response);
     });
   }
@@ -152,7 +166,12 @@ export function StartProjectForm({
         >
           I&apos;ll read this and write back.
         </Heading>
-        <p className="mt-4 text-body text-cream-muted">Thanks, {answers.name.trim()}.</p>
+        <p className="mt-4 text-body text-cream-muted">
+          Thanks, {answers.name.trim()}.
+          {mailDraft
+            ? " Your email app should be open with this enquiry, addressed to me. Send it there and I'll write back."
+            : " I'll write back."}
+        </p>
       </div>
     );
   }
