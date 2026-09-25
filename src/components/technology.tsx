@@ -24,7 +24,7 @@ function Names({ items, muted = false }: { items: readonly string[]; muted?: boo
         <li
           key={name}
           className={cn(
-            "border border-line bg-ink-raised px-3 py-1.5 text-small motion-safe:transition-colors motion-safe:duration-base hover:border-cream/25",
+            "rounded-md border border-line bg-ink-raised px-3 py-1.5 text-small motion-safe:transition-colors motion-safe:duration-base hover:border-cream/25",
             muted ? "text-cream-muted" : "text-cream",
           )}
         >

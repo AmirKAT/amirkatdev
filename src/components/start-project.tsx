@@ -47,7 +47,7 @@ const emptyAnswers: Answers = {
 };
 
 const fieldClassName =
-  "mt-2 min-h-12 w-full rounded-sm border border-line bg-transparent px-4 py-3 text-base text-cream outline-none transition-colors duration-fast placeholder:text-stone focus:border-cream/40";
+  "mt-2 min-h-12 w-full rounded-md border border-line bg-transparent px-4 py-3 text-base text-cream outline-none transition-colors duration-fast placeholder:text-stone focus:border-cream/40";
 
 export function StartProjectForm({
   questionLevel = 3,

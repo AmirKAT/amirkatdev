@@ -55,7 +55,7 @@ export function HowItWorks() {
                   className="absolute top-5 right-0 left-10 hidden h-px bg-line xl:block"
                 />
               ) : null}
-              <p className="relative z-10 flex size-10 items-center justify-center border border-line bg-ink-raised font-mono text-[0.6875rem] tracking-[0.08em] text-cream-muted">
+              <p className="relative z-10 flex size-10 items-center justify-center rounded-md border border-line bg-ink-raised font-mono text-[0.6875rem] tracking-[0.08em] text-cream-muted">
                 {stage.number}
               </p>
               <Heading level={3} size="title" className="mt-6">

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { IBM_Plex_Mono, Instrument_Sans, Instrument_Serif } from "next/font/google";
+import { Fraunces, IBM_Plex_Mono, Instrument_Sans } from "next/font/google";
 import { Footer } from "@/components/footer";
 import { Navigation } from "@/components/navigation";
 import { site } from "@/lib/site";
@@ -12,10 +12,11 @@ const instrumentSans = Instrument_Sans({
   adjustFontFallback: true,
 });
 
-const instrumentSerif = Instrument_Serif({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--font-instrument-serif",
+  style: ["normal", "italic"],
+  axes: ["SOFT", "opsz"],
+  variable: "--font-fraunces",
   display: "swap",
   adjustFontFallback: true,
 });
@@ -72,7 +73,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${instrumentSans.variable} ${instrumentSerif.variable} ${plexMono.variable} h-full antialiased`}
+      className={`${instrumentSans.variable} ${fraunces.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="relative flex min-h-full flex-col bg-ink font-sans text-cream">
         <a

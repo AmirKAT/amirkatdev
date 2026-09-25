@@ -81,7 +81,7 @@ export function Pricing({
           <article
             key={plan.number}
             className={cn(
-              "surface rise relative flex h-full flex-col overflow-hidden border px-6 py-8 shadow-lift md:last:col-span-2 lg:px-6 lg:py-8 lg:last:col-span-1 xl:px-8 xl:py-10",
+              "surface rise relative flex h-full flex-col overflow-hidden rounded-lg border px-6 py-8 shadow-lift md:last:col-span-2 lg:px-6 lg:py-8 lg:last:col-span-1 xl:px-8 xl:py-10",
               plan.highlighted
                 ? "border-burgundy bg-ink-raised"
                 : "border-line bg-ink-soft/50 hover:border-cream/25",
@@ -94,7 +94,7 @@ export function Pricing({
               />
             ) : null}
             <p className="text-eyebrow text-stone uppercase">From</p>
-            <p className="mt-3 font-display text-[clamp(2.5rem,4vw,3.5rem)] leading-none tracking-[-0.03em] text-cream">
+            <p className="mt-3 font-display text-[clamp(2.5rem,4vw,3.5rem)] leading-none tracking-[-0.02em] text-cream">
               {prices[plan.price]}
             </p>
             <Heading level={itemLevel} size="title" className="mt-6">

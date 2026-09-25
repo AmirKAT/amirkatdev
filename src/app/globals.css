@@ -15,7 +15,7 @@
 
 @theme inline {
   --font-sans: var(--font-instrument-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
   --font-mono: var(--font-ibm-plex-mono), ui-monospace, monospace;
 }
 
@@ -31,19 +31,19 @@
   --color-burgundy-deep: #7c1c22;
 
   --text-display: clamp(2.75rem, 7vw, 6.25rem);
-  --text-display--line-height: 0.94;
-  --text-display--letter-spacing: -0.03em;
-  --text-display--font-weight: 400;
+  --text-display--line-height: 1.04;
+  --text-display--letter-spacing: -0.02em;
+  --text-display--font-weight: 500;
 
   --text-headline: clamp(2.25rem, 4vw, 3.75rem);
-  --text-headline--line-height: 1;
-  --text-headline--letter-spacing: -0.03em;
-  --text-headline--font-weight: 400;
+  --text-headline--line-height: 1.08;
+  --text-headline--letter-spacing: -0.02em;
+  --text-headline--font-weight: 500;
 
   --text-title: clamp(1.75rem, 2.2vw, 2.25rem);
-  --text-title--line-height: 1.15;
-  --text-title--letter-spacing: -0.02em;
-  --text-title--font-weight: 400;
+  --text-title--line-height: 1.2;
+  --text-title--letter-spacing: -0.015em;
+  --text-title--font-weight: 500;
 
   --text-subtitle: 1.5rem;
   --text-subtitle--line-height: 1.25;
@@ -58,7 +58,7 @@
 
   --text-eyebrow: 0.75rem;
   --text-eyebrow--line-height: 1.4;
-  --text-eyebrow--letter-spacing: 0.18em;
+  --text-eyebrow--letter-spacing: 0.12em;
   --text-eyebrow--font-weight: 500;
 
   --spacing-gutter: 1.5rem;
@@ -130,6 +130,10 @@ html::-webkit-scrollbar {
     padding-inline: max(var(--spacing-gutter-lg), env(safe-area-inset-left, 0px))
       max(var(--spacing-gutter-lg), env(safe-area-inset-right, 0px));
   }
+}
+
+.font-display {
+  font-variation-settings: "SOFT" 40, "opsz" 72;
 }
 
 body {
