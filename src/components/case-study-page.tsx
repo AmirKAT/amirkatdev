@@ -86,26 +86,6 @@ export function CaseStudyPage({ project, study, next }: CaseStudyPageProps) {
         </ol>
       </Container>
 
-      <Container className="flex flex-col gap-12 border-t border-line py-section-sm md:gap-16 md:py-section">
-        <h2 className="text-eyebrow text-stone uppercase">The product</h2>
-        {study.gallery.map((image) => (
-          <figure key={image.src}>
-            <div className="relative aspect-[16/10] overflow-hidden bg-ink-soft">
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                sizes="(min-width: 64rem) 72rem, 100vw"
-                className="object-cover object-top"
-              />
-            </div>
-            <figcaption className="mt-4 text-eyebrow text-stone uppercase">
-              {image.caption}
-            </figcaption>
-          </figure>
-        ))}
-      </Container>
-
       <Container className="border-t border-line py-section-sm md:py-section">
         <h2 className="text-eyebrow text-stone uppercase">Live website</h2>
         <Heading level={2} size="headline" className="mt-5 max-w-3xl">
