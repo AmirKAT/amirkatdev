@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
 import { Heading } from "@/components/heading";
-import { Tag } from "@/components/tag";
 import type { CaseStudy } from "@/lib/case-studies";
 import type { Project } from "@/lib/projects";
 
@@ -105,22 +104,6 @@ export function CaseStudyPage({ project, study, next }: CaseStudyPageProps) {
             </figcaption>
           </figure>
         ))}
-      </Container>
-
-      <Container className="grid gap-6 border-t border-line py-14 md:grid-cols-12 md:items-start md:py-16">
-        <div className="md:col-span-3">
-          <h2 className="text-eyebrow text-stone uppercase">Technology</h2>
-          {study.technologyNote ? (
-            <p className="mt-3 text-small text-stone">{study.technologyNote}</p>
-          ) : null}
-        </div>
-        <ul className="flex flex-wrap gap-2 md:col-span-9">
-          {study.technologies.map((technology) => (
-            <li key={technology}>
-              <Tag>{technology}</Tag>
-            </li>
-          ))}
-        </ul>
       </Container>
 
       <Container className="border-t border-line py-section-sm md:py-section">
