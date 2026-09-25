@@ -54,6 +54,7 @@ export function Button({
 
   if (href) {
     const external = href.startsWith("http");
+    const hashLink = href.startsWith("#") || href.startsWith("/#");
 
     if (external) {
       return (
@@ -66,6 +67,14 @@ export function Button({
         >
           {children}
           <span className="sr-only">, opens in a new tab</span>
+        </a>
+      );
+    }
+
+    if (hashLink) {
+      return (
+        <a href={href} className={classes} onClick={onClick}>
+          {children}
         </a>
       );
     }
