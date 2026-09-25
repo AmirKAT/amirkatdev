@@ -32,21 +32,6 @@ export type EnquiryResult =
   | { status: "unavailable" }
   | { status: "invalid"; message: string };
 
-export function enquiryMailto(enquiry: Enquiry) {
-  const subject = `Project enquiry from ${enquiry.name}`;
-  const body = [
-    `Name: ${enquiry.name}`,
-    `Email: ${enquiry.email}`,
-    `Looking to build: ${enquiry.projectType}`,
-    `Budget: ${enquiry.budget}`,
-    `Timeline: ${enquiry.timeline}`,
-    "",
-    enquiry.message,
-  ].join("\n");
-
-  return `mailto:${enquiryRecipients.join(",")}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-}
-
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function isOneOf<T extends string>(value: string, options: readonly T[]): value is T {

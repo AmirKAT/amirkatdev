@@ -12,6 +12,10 @@ type EnquiryInput = {
   website?: string;
 };
 
+function mailConfigured() {
+  return Boolean(process.env.ENQUIRY_FUNCTION_URL && process.env.STUDIO_ENQUIRY_TOKEN);
+}
+
 function resendConfigured() {
   return Boolean(process.env.RESEND_API_KEY && process.env.RESEND_FROM_EMAIL);
 }
@@ -30,6 +34,19 @@ function enquiryText(enquiry: Enquiry) {
     "",
     enquiry.message,
   ].join("\n");
+}
+
+async function sendWithFunction(enquiry: Enquiry) {
+  const response = await fetch(process.env.ENQUIRY_FUNCTION_URL ?? "", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${process.env.STUDIO_ENQUIRY_TOKEN}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(enquiry),
+  });
+
+  return response.ok;
 }
 
 async function sendWithResend(enquiry: Enquiry) {
@@ -86,7 +103,7 @@ export async function submitEnquiry(input: EnquiryInput): Promise<EnquiryResult>
     return { status: "sent" };
   }
 
-  const sendEmail = resendConfigured();
+  const sendEmail = mailConfigured() || resendConfigured();
   const saveEnquiry = supabaseConfigured();
 
   if (!sendEmail && !saveEnquiry) {
@@ -94,7 +111,11 @@ export async function submitEnquiry(input: EnquiryInput): Promise<EnquiryResult>
   }
 
   const results = await Promise.all([
-    sendEmail ? sendWithResend(parsed.enquiry) : Promise.resolve(true),
+    mailConfigured()
+      ? sendWithFunction(parsed.enquiry)
+      : resendConfigured()
+        ? sendWithResend(parsed.enquiry)
+        : Promise.resolve(true),
     saveEnquiry ? saveWithSupabase(parsed.enquiry) : Promise.resolve(true),
   ]);
 
