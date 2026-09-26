@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/container";
+import { EmailLink } from "@/components/email-link";
 import { LinkedInLink } from "@/components/linkedin-link";
 import { SiteLink } from "@/components/site-link";
-import { navigation, pricingLink, profiles, site, startProject } from "@/lib/site";
+import { WhatsAppLink } from "@/components/whatsapp-link";
+import { navigation, pricingLink, site, startProject } from "@/lib/site";
 
-const footerLinks = [...navigation, pricingLink, startProject, profiles.email];
+const footerLinks = [...navigation, pricingLink, startProject];
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -41,9 +43,13 @@ export function Footer() {
                 {item.label}
               </SiteLink>
             ))}
+            <EmailLink className="quiet-link flex min-h-11 items-center gap-2.5 text-sm text-stone">
+              <span aria-hidden="true">Email</span>
+            </EmailLink>
             <LinkedInLink className="quiet-link flex min-h-11 items-center gap-2.5 text-sm text-stone">
               <span aria-hidden="true">LinkedIn</span>
             </LinkedInLink>
+            <WhatsAppLink className="quiet-link flex min-h-11 items-center gap-2.5 py-2 text-sm text-stone" />
           </nav>
         </div>
 
