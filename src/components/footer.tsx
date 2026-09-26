@@ -49,7 +49,9 @@ export function Footer() {
             <LinkedInLink className="quiet-link flex min-h-11 items-center gap-2.5 text-sm text-stone">
               <span aria-hidden="true">LinkedIn</span>
             </LinkedInLink>
-            <WhatsAppLink className="quiet-link flex min-h-11 items-center gap-2.5 py-2 text-sm text-stone" />
+            <WhatsAppLink className="quiet-link flex min-h-11 items-center gap-2.5 text-sm text-stone">
+              <span aria-hidden="true">WhatsApp</span>
+            </WhatsAppLink>
           </nav>
         </div>
 

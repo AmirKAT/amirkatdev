@@ -29,9 +29,5 @@ export const startProject = {
 export const profiles = {
   email: { label: "Email", href: "mailto:hello@amirkat.dev" },
   linkedin: { label: "LinkedIn", href: "https://www.linkedin.com/in/amir-mk" },
-  whatsapp: {
-    label: "WhatsApp",
-    number: "+44 7923 152158",
-    href: "https://wa.me/447923152158",
-  },
+  whatsapp: { label: "WhatsApp", href: "https://wa.me/447923152158" },
 } as const;

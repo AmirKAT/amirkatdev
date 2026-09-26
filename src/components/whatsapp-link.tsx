@@ -2,6 +2,7 @@ import { profiles } from "@/lib/site";
 
 type WhatsAppLinkProps = {
   className?: string;
+  children?: React.ReactNode;
 };
 
 export function WhatsAppIcon({ className }: { className?: string }) {
@@ -12,20 +13,17 @@ export function WhatsAppIcon({ className }: { className?: string }) {
   );
 }
 
-export function WhatsAppLink({ className }: WhatsAppLinkProps) {
+export function WhatsAppLink({ className, children }: WhatsAppLinkProps) {
   return (
     <a
       href={profiles.whatsapp.href}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={`WhatsApp, ${profiles.whatsapp.number}`}
+      aria-label="WhatsApp"
       className={className}
     >
       <WhatsAppIcon className="size-[1.125rem] shrink-0" />
-      <span aria-hidden="true" className="flex flex-col items-start leading-tight">
-        <span>WhatsApp</span>
-        <span className="mt-0.5">{profiles.whatsapp.number}</span>
-      </span>
+      {children}
     </a>
   );
 }
