@@ -47,10 +47,6 @@ export function About({
             I have a professional software engineering background, so the work is built to stay
             fast, reliable and straightforward to maintain.
           </p>
-          <p className="flex items-center gap-3 pt-5 text-eyebrow text-stone uppercase">
-            <span className="h-px w-8 shrink-0 bg-burgundy" aria-hidden="true" />
-            Building professionally. Shipping independently.
-          </p>
         </div>
       </div>
 
