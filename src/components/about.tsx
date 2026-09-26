@@ -21,7 +21,7 @@ export function About({
       <Heading id="about-heading" level={titleLevel} size="headline" className="rise max-w-4xl">
         Built by an engineer.
         <br />
-        Designed for humans.
+        Designed for everyone.
       </Heading>
 
       <div className="mt-10 max-w-2xl lg:mt-14">
