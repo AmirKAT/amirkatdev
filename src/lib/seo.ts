@@ -14,7 +14,7 @@ export const pages = {
     path: "/",
     title: "AmirKAT — Custom Websites & Digital Products",
     description:
-      "Independent software engineer building custom websites, web applications and digital products for businesses and founders.",
+      "I build custom websites, web applications and digital products for businesses and founders.",
     absolute: true,
   },
   work: {
@@ -39,7 +39,7 @@ export const pages = {
     path: "/about",
     title: "About",
     description:
-      "AmirKAT is a software engineer and independent developer. You work directly with the person building the website or product.",
+      "I'm a software engineer and independent developer. You work directly with the person building the website or product.",
   },
   contact: {
     path: "/contact",
@@ -114,11 +114,6 @@ export function studioJsonLd() {
     description: pages.home.description,
     email: "hello@amirkat.dev",
     sameAs: ["https://github.com/AmirKAT"],
-    founder: {
-      "@type": "Person",
-      name: "AmirKAT",
-      jobTitle: "Software Engineer",
-    },
     knowsAbout: [
       "Business websites",
       "Custom websites",

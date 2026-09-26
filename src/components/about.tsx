@@ -30,7 +30,7 @@ export function About({
         Designed for everyone.
       </Heading>
       <p className="mt-6 max-w-xl text-body text-cream">
-        AmirKAT — software engineer and independent developer.
+        I&apos;m a software engineer and independent developer.
       </p>
 
       <div className="mt-8 max-w-2xl lg:mt-10">

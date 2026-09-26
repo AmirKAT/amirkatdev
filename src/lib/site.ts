@@ -4,7 +4,7 @@ export const site = {
   url: "https://amirkat.dev",
   tagline: "Build · Ship · Improve",
   description:
-    "Independent software engineer building custom websites, web applications and digital products for businesses and founders.",
+    "I build custom websites, web applications and digital products for businesses and founders.",
   audiences: ["Businesses", "Founders", "Individuals"],
 } as const;
 
