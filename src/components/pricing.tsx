@@ -40,7 +40,7 @@ const plans = [
   },
   {
     number: "03",
-    title: "Web app / product",
+    title: "Web app / digital product",
     price: 2,
     description:
       "SaaS products, dashboards, customer portals, internal tools and custom web applications.",

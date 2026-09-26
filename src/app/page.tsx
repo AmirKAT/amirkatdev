@@ -4,8 +4,9 @@ import { PageTransition } from "@/components/page-transition";
 import { Hero } from "@/components/hero";
 import { HowItWorks } from "@/components/how-it-works";
 import { JsonLd } from "@/components/json-ld";
-import { LocalPricing, LocalServices } from "@/components/local-pricing";
+import { LocalPricing } from "@/components/local-pricing";
 import { SelectedWork } from "@/components/selected-work";
+import { Services } from "@/components/services";
 import { StartSection } from "@/components/start-section";
 import { Technology } from "@/components/technology";
 import { pageMetadata, pages, studioJsonLd } from "@/lib/seo";
@@ -20,7 +21,7 @@ export default function Home() {
 
       <SelectedWork />
 
-      <LocalServices index="02" discussHref="/#start" />
+      <Services index="02" discussHref="/#start" />
 
       <Capabilities />
 

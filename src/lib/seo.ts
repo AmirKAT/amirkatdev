@@ -27,13 +27,13 @@ export const pages = {
     path: "/services",
     title: "Services",
     description:
-      "Websites from €1,000, custom websites from €2,000, and web apps or digital products from €4,000. Starting prices — the quote depends on the brief.",
+      "Business websites, custom websites, and web apps or digital products, designed and built directly.",
   },
   pricing: {
     path: "/pricing",
     title: "Pricing",
     description:
-      "Starting points from €1,000 for a website, €2,000 for a custom website, and €4,000 for a web app or product. Final pricing depends on scope.",
+      "Starting points from €1,000 for a website, €2,000 for a custom website, and €4,000 for a web app or digital product. Final pricing depends on scope.",
   },
   about: {
     path: "/about",
@@ -149,7 +149,7 @@ export function studioJsonLd() {
       },
       {
         "@type": "Offer",
-        name: "Web app / product",
+        name: "Web app / digital product",
         description:
           "SaaS products, dashboards, customer portals, internal tools and custom web applications.",
         priceCurrency: "EUR",
