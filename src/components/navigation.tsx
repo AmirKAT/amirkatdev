@@ -81,6 +81,10 @@ export function Navigation() {
     setOpen(false);
   }
 
+  function closeAfterNavigate() {
+    window.setTimeout(close, 0);
+  }
+
   return (
     <header
       style={{ viewTransitionName: "site-header" }}
@@ -160,13 +164,13 @@ export function Navigation() {
               <SiteLink
                 key={item.label}
                 href={item.href}
-                onClick={close}
+                onClick={closeAfterNavigate}
                 className="flex min-h-12 items-center text-lg text-cream transition-colors duration-fast"
               >
                 {item.label}
               </SiteLink>
             ))}
-            <Button href={startProject.href} className="mt-4 w-full" onClick={close}>
+            <Button href={startProject.href} className="mt-4 w-full" onClick={closeAfterNavigate}>
               {startProject.label}
             </Button>
           </Container>
