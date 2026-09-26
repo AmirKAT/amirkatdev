@@ -12,8 +12,10 @@ export const budgets = allBudgetOptions();
 
 export const timelines = ["ASAP", "2–4 weeks", "1–2 months", "2–3 months", "Flexible"] as const;
 
+export const unsureBudget = "Not sure yet";
+
 export type ProjectType = (typeof projectTypes)[number];
-export type Budget = (typeof budgets)[number];
+export type Budget = (typeof budgets)[number] | typeof unsureBudget;
 export type Timeline = (typeof timelines)[number];
 
 export type Enquiry = {
@@ -23,6 +25,7 @@ export type Enquiry = {
   message: string;
   name: string;
   email: string;
+  company: string;
 };
 
 export const enquiryRecipients = ["amir-katal@hotmail.com", "amirkatal96@gmail.com"] as const;
@@ -45,6 +48,7 @@ export function parseEnquiry(input: {
   message?: string;
   name?: string;
   email?: string;
+  company?: string;
   website?: string;
 }): { ok: true; enquiry: Enquiry; honeypot: boolean } | { ok: false; message: string } {
   const projectType = input.projectType?.trim() ?? "";
@@ -53,13 +57,14 @@ export function parseEnquiry(input: {
   const message = input.message?.trim() ?? "";
   const name = input.name?.trim() ?? "";
   const email = input.email?.trim() ?? "";
+  const company = input.company?.trim() ?? "";
 
   if (!isOneOf(projectType, projectTypes)) {
     return { ok: false, message: "Choose what you are looking to build." };
   }
 
-  if (!isOneOf(budget, budgets)) {
-    return { ok: false, message: "Choose an approximate budget." };
+  if (budget !== unsureBudget && !isOneOf(budget, budgets)) {
+    return { ok: false, message: "Choose an approximate budget, or say if you're not sure yet." };
   }
 
   if (!isOneOf(timeline, timelines)) {
@@ -86,9 +91,21 @@ export function parseEnquiry(input: {
     return { ok: false, message: "That email doesn't look quite right." };
   }
 
+  if (company.length > 120) {
+    return { ok: false, message: "That company name is a little long." };
+  }
+
   return {
     ok: true,
     honeypot: Boolean(input.website?.trim()),
-    enquiry: { projectType, budget, timeline, message, name, email },
+    enquiry: {
+      projectType,
+      budget: budget as Budget,
+      timeline,
+      message,
+      name,
+      email,
+      company,
+    },
   };
 }

@@ -21,7 +21,7 @@ export const projects: readonly Project[] = [
     title: "Wizume",
     category: "AI product",
     summary:
-      "An AI-powered CV and resume platform that helps users create, optimise and tailor applications to specific jobs.",
+      "An AI-powered CV and resume product. You write in the browser, tailor the document to a job, and export it when it is ready to send.",
     url: "https://wizume.ai",
     image: {
       src: "/work/wizume.jpg",
@@ -35,7 +35,7 @@ export const projects: readonly Project[] = [
     title: "StepWithSerg",
     category: "Business website",
     summary:
-      "A custom website for a professional sneaker cleaning business, built to present services, pricing and customer proof while driving enquiries.",
+      "A website for a London sneaker cleaning business. Services, prices and finished work are on the page, and customers can book, pay and follow an order.",
     url: "https://stepwithserg.com",
     image: {
       src: "/work/stepwithserg.jpg",
@@ -48,7 +48,8 @@ export const projects: readonly Project[] = [
     slug: "tactiqclub",
     title: "TactiqClub",
     category: "Digital product",
-    summary: "A digital product and community platform built around the TactiqClub brand.",
+    summary:
+      "The site for a free app used by grassroots clubs. It sets out fixtures, availability, squads, payments and messages in one product, instead of a group chat.",
     url: "https://tactiqclub.com",
     image: {
       src: "/work/tactiqclub.jpg",
@@ -62,7 +63,7 @@ export const projects: readonly Project[] = [
     title: "Katalyst Media",
     category: "Business website",
     summary:
-      "A website for a music marketing studio, built to show how a release is taken from the song to the audience.",
+      "A website for a London music marketing studio. It shows how a release moves from the song to the audience, then gives artists a way to enquire.",
     url: "https://www.katalystmedia.co.uk",
     image: {
       src: "/work/katalyst.jpg",

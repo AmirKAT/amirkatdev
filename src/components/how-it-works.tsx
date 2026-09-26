@@ -4,34 +4,34 @@ import { Section } from "@/components/section";
 const stages = [
   {
     number: "01",
-    title: "Discover",
-    description: "Understand the idea, goals, users and requirements.",
+    title: "Discovery",
+    description: "We discuss your idea, requirements and goals.",
   },
   {
     number: "02",
     title: "Design",
-    description: "Shape the structure, experience and visual direction.",
+    description: "I turn the requirements into a clear, polished user experience.",
   },
   {
     number: "03",
     title: "Build",
-    description: "Turn the design into a real, production-ready product.",
+    description: "I develop the website or product using a modern, maintainable stack.",
   },
   {
     number: "04",
     title: "Launch",
-    description: "Deploy, test, polish and get it into the hands of your customers.",
+    description: "Everything is tested, deployed and handed over ready to use.",
   },
 ] as const;
 
 export function HowItWorks() {
   return (
     <Section
-      id="how-it-works"
-      index="03"
-      eyebrow="How it works"
-      title="From idea to launch."
-      intro="No unnecessary layers. We figure out what needs building, build it, and get it live."
+      id="process"
+      index="04"
+      eyebrow="Process"
+      title="From the first conversation to launch."
+      intro="You deal with me throughout. Four steps, and no account manager in between."
       className="border-t border-line"
     >
       <ol className="grid gap-10 md:grid-cols-2 md:gap-x-12 md:gap-y-14 xl:grid-cols-4 xl:gap-0">

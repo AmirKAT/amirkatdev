@@ -4,16 +4,22 @@ export const site = {
   url: "https://amirkat.dev",
   tagline: "Build · Ship · Improve",
   description:
-    "I build custom websites, web apps and digital products for businesses, brands and ambitious ideas.",
-  audiences: ["Businesses", "Brands", "Individuals"],
+    "Independent software engineer building custom websites, web applications and digital products for businesses and founders.",
+  audiences: ["Businesses", "Founders", "Individuals"],
 } as const;
 
 export const navigation = [
   { label: "Work", href: "/work" },
   { label: "Services", href: "/services" },
-  { label: "Pricing", href: "/pricing" },
+  { label: "Process", href: "/#process" },
   { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ] as const;
+
+export const pricingLink = {
+  label: "Pricing",
+  href: "/pricing",
+} as const;
 
 export const startProject = {
   label: "Start a project",

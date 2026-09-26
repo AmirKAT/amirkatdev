@@ -9,7 +9,8 @@ const plans = [
     number: "01",
     title: "Website",
     price: 0,
-    description: "Professional websites for businesses, services and personal brands.",
+    description:
+      "Professional business websites, landing pages, portfolios and marketing sites.",
     includes: [
       "Custom responsive design",
       "Multi-page website",
@@ -25,7 +26,7 @@ const plans = [
     title: "Custom website",
     price: 1,
     description:
-      "More bespoke websites with custom functionality, integrations and richer experiences.",
+      "More complex websites with custom functionality, integrations, a CMS, authentication or dashboards.",
     includes: [
       "Custom UI/UX",
       "Advanced interactions",
@@ -41,7 +42,8 @@ const plans = [
     number: "03",
     title: "Web app / product",
     price: 2,
-    description: "Custom web applications and digital products with real functionality.",
+    description:
+      "SaaS products, dashboards, customer portals, internal tools and custom web applications.",
     includes: [
       "Custom application architecture",
       "Authentication where required",
@@ -59,20 +61,22 @@ export function Pricing({
   titleLevel = 2,
   estimateHref = startProject.href,
   prices,
+  index,
 }: {
   titleLevel?: 1 | 2;
   estimateHref?: string;
   prices: readonly string[];
+  index?: string;
 }) {
   const itemLevel = titleLevel === 1 ? 2 : 3;
 
   return (
     <Section
       id="pricing"
-      index="04"
+      index={index}
       eyebrow="Pricing"
       title="What does it cost?"
-      intro="Most projects fall somewhere within these ranges. Once I understand the scope, I'll give you a clear quote."
+      intro="A closer look at what each starting price covers. The quote still depends on the requirements."
       titleLevel={titleLevel}
       className="border-t border-line"
     >
@@ -115,12 +119,12 @@ export function Pricing({
       </div>
 
       <p className="mt-12 max-w-2xl text-small text-stone">
-        Final pricing depends on scope, complexity and integrations. These are starting points, not
-        fixed packages.
+        Final pricing depends on scope, complexity and integrations. These figures are starting
+        points, not a promise of the final price.
       </p>
       <div className="mt-8">
         <Button href={estimateHref} size="lg" className="w-full sm:w-auto">
-          Get a project estimate
+          Discuss your project
         </Button>
       </div>
     </Section>

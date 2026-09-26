@@ -12,9 +12,9 @@ type PageSeo = {
 export const pages = {
   home: {
     path: "/",
-    title: "AmirKAT — Digital studio",
+    title: "Amir Katal — Custom Websites & Digital Products",
     description:
-      "Independent digital studio. I build custom websites, web apps and digital products for businesses, brands and ambitious ideas.",
+      "Independent software engineer building custom websites, web applications and digital products for businesses and founders.",
     absolute: true,
   },
   work: {
@@ -27,7 +27,7 @@ export const pages = {
     path: "/services",
     title: "Services",
     description:
-      "Custom websites, web apps, SaaS and digital products, from a straightforward site to a fully custom product.",
+      "Websites from €1,000, custom websites from €2,000, and web apps or digital products from €4,000. Starting prices — the quote depends on the brief.",
   },
   pricing: {
     path: "/pricing",
@@ -39,13 +39,13 @@ export const pages = {
     path: "/about",
     title: "About",
     description:
-      "AmirKAT is an independent studio. The work is built by an engineer and designed for the people who use it.",
+      "Amir Katal is a software engineer and independent developer. You work directly with the person building the website or product.",
   },
   contact: {
     path: "/contact",
     title: "Start a project",
     description:
-      "Tell me what you're trying to build. Even if it's just an idea, that's enough to start a conversation.",
+      "Tell me what you're building. A name, an email and a short note is enough to start.",
   },
 } as const satisfies Record<string, PageSeo>;
 
@@ -61,7 +61,12 @@ export function pageMetadata(page: PageSeo): Metadata {
       siteName: site.name,
       locale: "en_GB",
       type: "website",
-      images: [{ url: "/opengraph-image", alt: "AmirKAT. Websites and digital products, built properly." }],
+      images: [
+        {
+          url: "/opengraph-image",
+          alt: "Amir Katal. Custom websites and digital products, without the agency overhead.",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
@@ -109,12 +114,25 @@ export function studioJsonLd() {
     description: pages.home.description,
     email: "hello@amirkat.dev",
     sameAs: ["https://github.com/AmirKAT"],
-    knowsAbout: ["Websites", "Web app / SaaS", "Digital products"],
+    founder: {
+      "@type": "Person",
+      name: "Amir Katal",
+      jobTitle: "Software Engineer",
+    },
+    knowsAbout: [
+      "Business websites",
+      "Custom websites",
+      "SaaS and web applications",
+      "E-commerce",
+      "Internal tools",
+      "AI-powered products",
+    ],
     makesOffer: [
       {
         "@type": "Offer",
         name: "Website",
-        description: "Professional websites for businesses, services and personal brands.",
+        description:
+          "Professional business websites, landing pages, portfolios and marketing sites.",
         priceCurrency: "EUR",
         priceSpecification: {
           "@type": "PriceSpecification",
@@ -126,7 +144,7 @@ export function studioJsonLd() {
         "@type": "Offer",
         name: "Custom website",
         description:
-          "More bespoke websites with custom functionality, integrations and richer experiences.",
+          "More complex websites with custom functionality, integrations, a CMS, authentication or dashboards.",
         priceCurrency: "EUR",
         priceSpecification: {
           "@type": "PriceSpecification",
@@ -137,7 +155,8 @@ export function studioJsonLd() {
       {
         "@type": "Offer",
         name: "Web app / product",
-        description: "Custom web applications and digital products with real functionality.",
+        description:
+          "SaaS products, dashboards, customer portals, internal tools and custom web applications.",
         priceCurrency: "EUR",
         priceSpecification: {
           "@type": "PriceSpecification",

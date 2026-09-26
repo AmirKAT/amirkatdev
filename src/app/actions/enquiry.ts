@@ -9,6 +9,7 @@ type EnquiryInput = {
   message?: string;
   name?: string;
   email?: string;
+  company?: string;
   website?: string;
 };
 
@@ -28,6 +29,7 @@ function enquiryText(enquiry: Enquiry) {
   return [
     `Name: ${enquiry.name}`,
     `Email: ${enquiry.email}`,
+    ...(enquiry.company ? [`Company: ${enquiry.company}`] : []),
     `Looking to build: ${enquiry.projectType}`,
     `Budget: ${enquiry.budget}`,
     `Timeline: ${enquiry.timeline}`,

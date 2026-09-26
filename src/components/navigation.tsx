@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
+import { SiteLink } from "@/components/site-link";
 import { Wordmark } from "@/components/wordmark";
 import { cn } from "@/lib/cn";
 import { navigation, startProject } from "@/lib/site";
@@ -90,15 +91,15 @@ export function Navigation() {
           <Wordmark />
         </Link>
 
-        <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-5 lg:flex xl:gap-8">
           {navigation.map((item) => (
-            <Link
-              key={item.href}
+            <SiteLink
+              key={item.label}
               href={item.href}
               className="quiet-link inline-flex min-h-11 items-center text-sm text-stone"
             >
               {item.label}
-            </Link>
+            </SiteLink>
           ))}
         </nav>
 
@@ -156,14 +157,14 @@ export function Navigation() {
         >
           <Container className="flex flex-col py-8">
             {navigation.map((item) => (
-              <Link
-                key={item.href}
+              <SiteLink
+                key={item.label}
                 href={item.href}
                 onClick={close}
                 className="flex min-h-12 items-center text-lg text-cream transition-colors duration-fast"
               >
                 {item.label}
-              </Link>
+              </SiteLink>
             ))}
             <Button href={startProject.href} className="mt-4 w-full" onClick={close}>
               {startProject.label}

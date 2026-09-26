@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/container";
-import { navigation, profiles, site, startProject } from "@/lib/site";
+import { SiteLink } from "@/components/site-link";
+import { navigation, pricingLink, profiles, site, startProject } from "@/lib/site";
 
-const footerLinks = [...navigation, startProject, profiles.email];
+const footerLinks = [...navigation, pricingLink, startProject, profiles.email];
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -25,36 +26,20 @@ export function Footer() {
             </Link>
             <p className="mt-6 text-eyebrow text-stone uppercase">{site.tagline}</p>
             <p className="mt-4 text-body text-cream-muted">
-              Websites and digital products, built properly.
+              Custom websites and digital products, without the agency overhead.
             </p>
           </div>
 
           <nav aria-label="Footer" className="flex flex-col items-start">
-            {footerLinks.map((item) => {
-              const className = "quiet-link flex min-h-11 items-center text-sm text-stone";
-
-              if (item.href.startsWith("http") || item.href.startsWith("mailto:")) {
-                const external = item.href.startsWith("http");
-
-                return (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    className={className}
-                    {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
-                  >
-                    {item.label}
-                    {external ? <span className="sr-only">, opens in a new tab</span> : null}
-                  </a>
-                );
-              }
-
-              return (
-                <Link key={item.href} href={item.href} className={className}>
-                  {item.label}
-                </Link>
-              );
-            })}
+            {footerLinks.map((item) => (
+              <SiteLink
+                key={item.label}
+                href={item.href}
+                className="quiet-link flex min-h-11 items-center text-sm text-stone"
+              >
+                {item.label}
+              </SiteLink>
+            ))}
           </nav>
         </div>
 

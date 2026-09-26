@@ -9,7 +9,7 @@ export default function WorkPage() {
   return (
     <PageTransition>
       <JsonLd data={pageJsonLd(pages.work)} />
-      <SelectedWork titleLevel={1} />
+      <SelectedWork titleLevel={1} index="01" />
     </PageTransition>
   );
 }

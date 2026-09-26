@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "AmirKAT — Websites and digital products, built properly.";
+export const alt = "Amir Katal — Custom websites and digital products, without the agency overhead.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -25,13 +25,13 @@ export default async function OpenGraphImage() {
           <div
             style={{
               color: "#F9EFE2",
-              fontSize: 64,
-              lineHeight: 1.05,
+              fontSize: 56,
+              lineHeight: 1.08,
               marginTop: 24,
-              maxWidth: 920,
+              maxWidth: 980,
             }}
           >
-            Websites and digital products, built properly.
+            Custom websites and digital products, without the agency overhead.
           </div>
         </div>
         <div style={{ width: 72, height: 4, background: "#A3252C" }} />

@@ -5,7 +5,7 @@ import { submitEnquiry } from "@/app/actions/enquiry";
 import { Button } from "@/components/button";
 import { Heading } from "@/components/heading";
 import { cn } from "@/lib/cn";
-import { parseEnquiry, projectTypes, timelines, type EnquiryResult } from "@/lib/enquiry";
+import { parseEnquiry, projectTypes, timelines, unsureBudget, type EnquiryResult } from "@/lib/enquiry";
 
 const steps = [
   {
@@ -16,6 +16,7 @@ const steps = [
   {
     key: "budget",
     prompt: "What's your approximate budget?",
+    note: "Optional. A range is enough, or say if you're not sure yet.",
   },
   {
     key: "timeline",
@@ -33,6 +34,7 @@ type Answers = {
   message: string;
   name: string;
   email: string;
+  company: string;
   website: string;
 };
 
@@ -43,6 +45,7 @@ const emptyAnswers: Answers = {
   message: "",
   name: "",
   email: "",
+  company: "",
   website: "",
 };
 
@@ -210,7 +213,8 @@ export function StartProjectForm({
             headingRef={headingRef}
             questionLevel={questionLevel}
             prompt={choice.prompt}
-            options={choice.key === "budget" ? budgets : choice.options}
+            options={choice.key === "budget" ? [...budgets, unsureBudget] : choice.options}
+            note={"note" in choice ? choice.note : undefined}
             selected={answers[choice.key]}
             onChoose={(value) => choose(choice.key, value)}
           />
@@ -289,6 +293,22 @@ export function StartProjectForm({
                   className={fieldClassName}
                 />
               </label>
+              <label className="block" htmlFor="enquiry-company">
+                <span className="text-small text-stone">
+                  Company <span className="text-stone/80">(optional)</span>
+                </span>
+                <input
+                  id="enquiry-company"
+                  name="company"
+                  value={answers.company}
+                  onChange={(event) => {
+                    setAnswers((current) => ({ ...current, company: event.target.value }));
+                    setNotice("");
+                  }}
+                  autoComplete="organization"
+                  className={fieldClassName}
+                />
+              </label>
             </div>
             <label className="hidden" aria-hidden="true">
               Website
@@ -338,6 +358,7 @@ function ChoiceStep({
   questionLevel,
   prompt,
   options,
+  note,
   selected,
   onChoose,
 }: {
@@ -345,6 +366,7 @@ function ChoiceStep({
   questionLevel: 2 | 3;
   prompt: string;
   options: readonly string[];
+  note?: string;
   selected: string;
   onChoose: (value: string) => void;
 }) {
@@ -362,7 +384,9 @@ function ChoiceStep({
       >
         {prompt}
       </Heading>
-      <p className="mt-4 text-small text-stone">Choose one. The next question follows.</p>
+      <p className="mt-4 text-small text-stone">
+        {note ?? "Choose one. The next question follows."}
+      </p>
       <div className="mt-6 border-t border-line" role="group" aria-labelledby={promptId}>
         {options.map((option, index) => {
           const active = selected === option;

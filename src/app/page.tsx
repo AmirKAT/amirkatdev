@@ -1,12 +1,12 @@
 import { About } from "@/components/about";
+import { Capabilities } from "@/components/capabilities";
 import { PageTransition } from "@/components/page-transition";
 import { Hero } from "@/components/hero";
 import { HowItWorks } from "@/components/how-it-works";
 import { JsonLd } from "@/components/json-ld";
-import { LocalPricing, LocalStartProject } from "@/components/local-pricing";
-import { Section } from "@/components/section";
+import { LocalPricing, LocalServices } from "@/components/local-pricing";
 import { SelectedWork } from "@/components/selected-work";
-import { Services } from "@/components/services";
+import { StartSection } from "@/components/start-section";
 import { Technology } from "@/components/technology";
 import { pageMetadata, pages, studioJsonLd } from "@/lib/seo";
 
@@ -18,27 +18,21 @@ export default function Home() {
       <JsonLd data={studioJsonLd()} />
       <Hero />
 
-      <SelectedWork />
+      <SelectedWork index="01" />
 
-      <Services />
+      <LocalServices index="02" discussHref="/#start" />
+
+      <Capabilities />
 
       <HowItWorks />
 
-      <LocalPricing estimateHref="/#start" />
+      <LocalPricing index="05" estimateHref="/#start" />
 
-      <About showCta={false} />
+      <About index="06" showCta={false} />
 
       <Technology />
 
-      <Section
-        id="start"
-        eyebrow="Start a project"
-        title="Have something in mind?"
-        intro="Tell me what you're trying to build. Even if it's just an idea, that's enough to start."
-        className="border-t border-line"
-      >
-        <LocalStartProject />
-      </Section>
+      <StartSection />
     </PageTransition>
   );
 }

@@ -17,18 +17,19 @@ export function Hero() {
           size="display"
           className="mt-6 max-w-4xl motion-safe:animate-step [animation-delay:90ms]"
         >
-          Websites and digital products,{" "}
-          <span className="italic text-cream-muted">built properly.</span>
+          Custom websites and digital products,{" "}
+          <span className="italic text-cream-muted">without the agency overhead.</span>
         </Heading>
         <p className="mt-6 max-w-xl text-body text-cream-muted motion-safe:animate-step [animation-delay:180ms]">
-          {site.description}
+          I personally design and build websites, web applications and digital products for
+          businesses and founders.
         </p>
         <div className="mt-10 flex flex-col gap-3 motion-safe:animate-step min-[400px]:flex-row min-[400px]:flex-wrap [animation-delay:260ms]">
           <Button href="/#start" size="lg" className="w-full min-[400px]:w-auto">
             Start a project
           </Button>
           <Button href="/#work" variant="secondary" size="lg" className="w-full min-[400px]:w-auto">
-            See my work
+            View my work
           </Button>
         </div>
       </Container>

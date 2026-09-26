@@ -5,19 +5,25 @@ import { projects } from "@/lib/projects";
 export function SelectedWork({
   titleLevel = 2,
   showHeading = true,
+  index,
 }: {
   titleLevel?: 1 | 2;
   showHeading?: boolean;
+  index?: string;
 }) {
   const cardLevel = showHeading && titleLevel === 1 ? 2 : 3;
 
   return (
     <Section
       id="work"
-      index={showHeading ? "01" : undefined}
+      index={showHeading ? index : undefined}
       eyebrow={showHeading ? "Selected work" : undefined}
       title={showHeading ? "Things I've built." : undefined}
-      intro={showHeading ? "Real websites, products and digital experiences." : undefined}
+      intro={
+        showHeading
+          ? "Real projects. Each one is a product or a business site, with a live link."
+          : undefined
+      }
       titleLevel={titleLevel}
       padding={showHeading ? "default" : "none"}
       className={showHeading ? "border-t border-line" : "scroll-mt-[var(--header-height)] pb-14 md:pb-section-sm lg:pb-section"}

@@ -48,15 +48,15 @@ export function Technology() {
         Technology
       </p>
       <Heading id="technology-heading" level={2} size="title" className="max-w-2xl">
-        The stack behind the work.
+        Production software, not a template.
       </Heading>
       <p className="mt-4 max-w-xl text-body text-cream-muted">
-        I use modern tools that let me build, launch and maintain products properly.
+        The tools I use to design, build and keep a product running after launch.
       </p>
       <div className="mt-8">
         <Names items={stack} />
       </div>
-      <p className="mt-8 text-eyebrow text-stone uppercase">Testing</p>
+      <p className="mt-8 text-small text-stone">Also tested with</p>
       <div className="mt-3">
         <Names items={testing} muted />
       </div>
