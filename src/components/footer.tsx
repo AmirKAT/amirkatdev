@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/container";
+import { LinkedInLink } from "@/components/linkedin-link";
 import { SiteLink } from "@/components/site-link";
 import { navigation, pricingLink, profiles, site, startProject } from "@/lib/site";
 
@@ -40,6 +41,9 @@ export function Footer() {
                 {item.label}
               </SiteLink>
             ))}
+            <LinkedInLink className="quiet-link flex min-h-11 items-center gap-2.5 text-sm text-stone">
+              <span aria-hidden="true">LinkedIn</span>
+            </LinkedInLink>
           </nav>
         </div>
 

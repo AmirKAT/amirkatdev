@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
+import { LinkedInLink } from "@/components/linkedin-link";
 import { SiteLink } from "@/components/site-link";
 import { Wordmark } from "@/components/wordmark";
 import { cn } from "@/lib/cn";
@@ -107,7 +108,8 @@ export function Navigation() {
           ))}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-2 lg:flex xl:gap-3">
+          <LinkedInLink className="inline-flex size-11 items-center justify-center text-stone transition-colors duration-fast hover:text-cream" />
           <Button href={startProject.href} size="md">
             {startProject.label}
           </Button>
@@ -170,6 +172,12 @@ export function Navigation() {
                 {item.label}
               </SiteLink>
             ))}
+            <LinkedInLink
+              onClick={closeAfterNavigate}
+              className="mt-2 flex min-h-12 items-center gap-3 text-lg text-cream transition-colors duration-fast"
+            >
+              <span aria-hidden="true">LinkedIn</span>
+            </LinkedInLink>
             <Button href={startProject.href} className="mt-4 w-full" onClick={closeAfterNavigate}>
               {startProject.label}
             </Button>
