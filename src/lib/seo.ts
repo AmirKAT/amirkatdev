@@ -12,7 +12,7 @@ type PageSeo = {
 export const pages = {
   home: {
     path: "/",
-    title: "Amir Katal — Custom Websites & Digital Products",
+    title: "AmirKAT — Custom Websites & Digital Products",
     description:
       "Independent software engineer building custom websites, web applications and digital products for businesses and founders.",
     absolute: true,
@@ -39,7 +39,7 @@ export const pages = {
     path: "/about",
     title: "About",
     description:
-      "Amir Katal is a software engineer and independent developer. You work directly with the person building the website or product.",
+      "AmirKAT is a software engineer and independent developer. You work directly with the person building the website or product.",
   },
   contact: {
     path: "/contact",
@@ -64,7 +64,7 @@ export function pageMetadata(page: PageSeo): Metadata {
       images: [
         {
           url: "/opengraph-image",
-          alt: "Amir Katal. Custom websites and digital products, without the agency overhead.",
+          alt: "AmirKAT. Custom websites and digital products, without the agency overhead.",
         },
       ],
     },
@@ -116,7 +116,7 @@ export function studioJsonLd() {
     sameAs: ["https://github.com/AmirKAT"],
     founder: {
       "@type": "Person",
-      name: "Amir Katal",
+      name: "AmirKAT",
       jobTitle: "Software Engineer",
     },
     knowsAbout: [

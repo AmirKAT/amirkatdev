@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Amir Katal — Custom websites and digital products, without the agency overhead.";
+export const alt = "AmirKAT — Custom websites and digital products, without the agency overhead.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

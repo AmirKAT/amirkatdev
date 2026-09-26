@@ -30,7 +30,7 @@ const plexMono = IBM_Plex_Mono({
   adjustFontFallback: true,
 });
 
-const title = "Amir Katal — Custom Websites & Digital Products";
+const title = "AmirKAT — Custom Websites & Digital Products";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
