@@ -18,7 +18,7 @@ export default function Home() {
       <JsonLd data={studioJsonLd()} />
       <Hero />
 
-      <SelectedWork index="01" />
+      <SelectedWork />
 
       <LocalServices index="02" discussHref="/#start" />
 
