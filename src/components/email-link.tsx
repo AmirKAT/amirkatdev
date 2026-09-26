@@ -16,7 +16,7 @@ export function EmailIcon({ className }: { className?: string }) {
 export function EmailLink({ className, children }: EmailLinkProps) {
   return (
     <a href={profiles.email.href} aria-label="Email" className={className}>
-      <EmailIcon className="h-[1.125rem] w-auto shrink-0" />
+      <EmailIcon className="h-4 w-auto shrink-0" />
       {children}
     </a>
   );
